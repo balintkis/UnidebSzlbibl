@@ -70,7 +70,7 @@
                                                 <StackPanel Orientation="Horizontal">
                                                     <Label Content="A mű jellege:" Width="150" />
                                                     <!-- !!! Ne felejtsd el hozzáadni a zárójeleket, a nyitó zárójel előtt szóköz van!!!! -->
-                                                    <ComboBox x:Name="Cmbbx1_1_9mujelleg" Width="400">
+                                                    <ComboBox x:Name="Cmbbx1_1_9mujelleg" Width="400" SelectedValuePath="Content">
                                                         <ComboBoxItem Content="PhD-értekezés" />
                                                         <ComboBoxItem Content="Doktori-értekezés" />
                                                         <ComboBoxItem Content="Kézirat" />
@@ -93,7 +93,7 @@
                                                     <Label Content="Lapok száma:" Width="150" />
                                                     <TextBox x:Name="Txtbx1_1_12lapokszama" Width="400"/>
                                                 </StackPanel>
-                                                <Button x:Name="Btn_1_1_1Continue" Content="Tovább"  Width="95" HorizontalAlignment="Left" Margin="0,30,0,0" />
+                                                <Button x:Name="Btn_1_1_1Continue" Content="Tovább"  Width="95" HorizontalAlignment="Left" Margin="0,30,0,0" Click="Btn_1_1_1Continue_Click" />
 
 
 
@@ -137,7 +137,7 @@
                                             </StackPanel>
                                             <StackPanel Orientation="Horizontal">
                                                 <Label Content="A mű jellege:" Width="150" />
-                                                <ComboBox x:Name="Cmbbx1_2_1" Width="400">
+                                                <ComboBox x:Name="Cmbbx1_2_1" Width="400" SelectedValuePath="Content">
                                                     <ComboBoxItem Content="Kézirat" />
                                                     <ComboBoxItem Content="Diákköri dolgozat" />
                                                     <ComboBoxItem Content="Pályamunka" />
@@ -156,7 +156,7 @@
                                                 <Label Content="Lapok száma:" Width="150" />
                                                 <TextBox x:Name="Txtbx1_2_11" Width="400"/>
                                             </StackPanel>
-                                            <Button x:Name="Btn_1_2_1Continue" Content="Tovább"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" />
+                                            <Button x:Name="Btn_1_2_1Continue" Content="Tovább"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" Click="Btn_1_2_1Continue_Click" />
                                         </StackPanel>
                                     </TabItem>
                                     <TabItem Header="Cikk könyvben, könyvrészlet">
@@ -211,7 +211,7 @@
                                             </StackPanel>
                                             <StackPanel Orientation="Horizontal">
                                                 <Label Content="A mű jellege:" Width="150" />
-                                                <ComboBox x:Name="Cmbbx1_3_1" Width="400">
+                                                <ComboBox x:Name="Cmbbx1_3_1" Width="400" SelectedValuePath="Content">
                                                     <ComboBoxItem Content="Kézirat" />
                                                     <ComboBoxItem Content="Diákköri dolgozat" />
                                                     <ComboBoxItem Content="Pályamunka" />

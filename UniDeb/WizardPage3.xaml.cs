@@ -14,24 +14,18 @@ using System.Windows.Shapes;
 
 namespace UniDeb
 {
-    /// <summary>
-    /// Interaction logic for WizardPage2.xaml
-    /// </summary>
-    public partial class WizardPage2 : Window
-    {
 
+    /// <summary>
+    /// Interaction logic for WizardPage3.xaml
+    /// </summary>
+    public partial class WizardPage3 : Window
+    {
         private String initString;
 
-        public WizardPage2(String initString)
+        public WizardPage3(String initString)
         {
             InitializeComponent();
             this.initString = initString;
-        }
-
-        private void Btn_1_5_1Continue_Click(object sender, RoutedEventArgs e)
-        {
-            WizardPage3 wiz3 = new WizardPage3("");
-            wiz3.Show();
         }
     }
 }

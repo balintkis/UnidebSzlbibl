@@ -69,7 +69,7 @@
                 <TextBox x:Name="Txtbx2_1_16" Width="400"/>
             </StackPanel>
 
-            <Button x:Name="Btn_1_5_1Continue" Content="Tovább!"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" />
+            <Button x:Name="Btn_1_5_1Continue" Content="Tovább!"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" Click="Btn_1_5_1Continue_Click"  />
         </StackPanel>
     </Grid>
 </Window>

@@ -42,7 +42,7 @@ namespace UniDeb
         private void BtnDisplay_Click(object sender, RoutedEventArgs e)
         {
             string connStr = Service.getConnectionString();
-            
+
             string sql = "SELECT * FROM adat";
             try
             {
@@ -82,6 +82,59 @@ namespace UniDeb
             {
                 MessageBox.Show("MySQL kapcsolódási hiba!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+
+
+        private void Btn_1_1_1Continue_Click(object sender, RoutedEventArgs e)
+        {
+            String mezok =
+                "<strong>" + Txtbx1_1_1szerzo.Text + "</strong>" +
+                " (" + Txtbx1_1_2kiadaseve.Text + "):" +
+                "<em> " + Txtbx1_1_3konyvcim.Text + "." + "</em>" +
+                "<em> " + Txtbx1_1_4parhuzamoscim.Text + "." + "</em>" +
+                "<em> (" + Txtbx1_1_5alcim.Text + ".)" + "</em>" +
+                " " + Txtbx1_1_6kotetszam.Text + "." +
+                " " + Txtbx1_1_7kiadasszam.Text + "." +
+                " (" + Txtbx1_1_8sorozat.Text + ")" +
+                " (" + Cmbbx1_1_9mujelleg.SelectedValue.ToString() + ")." +
+                " " + Txtbx1_1_10kiadashelye.Text
+                ;
+
+            if (Txtbx1_1_11kiado.Text == "")
+            { mezok = mezok + "."; }
+            else mezok = mezok + " : " + Txtbx1_1_11kiado.Text + ".";
+
+            mezok = mezok +
+                " (" + Txtbx1_1_12lapokszama.Text + " lap).";
+
+            WizardPage2 wiz2 = new WizardPage2(mezok);
+            wiz2.Show();
+        }
+
+        private void Btn_1_2_1Continue_Click(object sender, RoutedEventArgs e)
+        {
+            String mezok =
+                "<strong>" + Txtbx1_2_1.Text + "</strong>" + " szerk." +
+                " (" + Txtbx1_2_2.Text + "): " +
+                "<em> " + Txtbx1_2_3.Text + ".</em>" +
+                "<em> " + Txtbx1_2_4.Text + ".</em>" +
+                "<em> (" + Txtbx1_2_5.Text + ".)</em>" +
+                " " + Txtbx1_2_6.Text + "." +
+                " " + Txtbx1_2_7.Text + "." +
+                " (" + Txtbx1_2_8.Text + ")" +
+                " (" + Cmbbx1_2_1.SelectedValue.ToString() + ")" +
+                " " + Txtbx1_2_9
+                ;
+
+            if (Txtbx1_2_10.Text == "")
+            { mezok = mezok + "."; }
+            else mezok = mezok + " : " + Txtbx1_2_10.Text + ".";
+
+            mezok = mezok + " (" + Txtbx1_2_11 + " lap).";
+
+            WizardPage2 wiz2 = new WizardPage2(mezok);
+            wiz2.Show();
         }
 
         private void Btn_1_5_1Continue_Click(object sender, RoutedEventArgs e)

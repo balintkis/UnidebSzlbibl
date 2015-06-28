@@ -33,7 +33,7 @@ namespace UniDeb
 
             String str = this.initString + "<br />";
             if (Txtbx2_1_1.Text != "")
-                str = str + "<em>Annotáció: </em>" + Txtbx2_1_1.Text + "<br />";
+                str = str + Txtbx2_1_1.Text + "<br />";
 
             if (Txtbx2_1_2.Text != "")
                 str = str + "<em>Kül.: </em>" + Txtbx2_1_2.Text + "<br />";
@@ -52,7 +52,6 @@ namespace UniDeb
 
             if (Txtbx2_1_7.Text != "")
                 str = str + "<em>Különlenyomat: </em>" + Txtbx2_1_7.Text + "<br />";
-
 
             if (Txtbx2_1_8.Text != "")
                 str = str + "<em>Eredeti közlése: </em>" + Txtbx2_1_8.Text + "<br />";           

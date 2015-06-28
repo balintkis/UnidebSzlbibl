@@ -34,7 +34,7 @@
                 <TextBox x:Name="Txtbx2_1_7" Width="400"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Eredeti közlése:" Width="150" />
+                <Label Content="Eredeti közlése::" Width="150" />
                 <TextBox x:Name="Txtbx2_1_8" Width="400"/>
             </StackPanel>
             
@@ -52,7 +52,7 @@
                 <TextBox x:Name="Txtbx2_1_11" Width="400"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Újabb kiadása:" Width="150" />
+                <Label Content="Újabb kiadása::" Width="150" />
                 <TextBox x:Name="Txtbx2_1_12" Width="400"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">

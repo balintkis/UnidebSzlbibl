@@ -88,25 +88,50 @@ namespace UniDeb
 
         private void Btn_1_1_1Continue_Click(object sender, RoutedEventArgs e)
         {
-            String mezok =
-                "<strong>" + Txtbx1_1_1szerzo.Text + "</strong>" +
-                " (" + Txtbx1_1_2kiadaseve.Text + "):" +
-                "<em> " + Txtbx1_1_3konyvcim.Text + "." + "</em>" +
-                "<em> " + Txtbx1_1_4parhuzamoscim.Text + "." + "</em>" +
-                "<em> (" + Txtbx1_1_5alcim.Text + ".)" + "</em>" +
-                " " + Txtbx1_1_6kotetszam.Text + "." +
-                " " + Txtbx1_1_7kiadasszam.Text + "." +
-                " (" + Txtbx1_1_8sorozat.Text + ")" +
-                " (" + Cmbbx1_1_9mujelleg.SelectedValue.ToString() + ")." +
-                " " + Txtbx1_1_10kiadashelye.Text
-                ;
+            String mezok = "";
+
+            if (Txtbx1_1_1szerzo.Text != "")
+                mezok = mezok + "<strong>" + Txtbx1_1_1szerzo.Text + "</strong>";
+
+            if (Txtbx1_1_2kiadaseve.Text != "")
+                mezok = mezok + " (" + Txtbx1_1_2kiadaseve.Text + "):";
+
+            if (Txtbx1_1_3konyvcim.Text != "")
+                mezok = mezok + "<em> " + Txtbx1_1_3konyvcim.Text + "." + "</em>";
+
+            if (Txtbx1_1_4parhuzamoscim.Text != "")
+                mezok = mezok + "<em> " + Txtbx1_1_4parhuzamoscim.Text + "." + "</em>";
+
+            if (Txtbx1_1_5alcim.Text != "")
+                mezok = mezok + "<em> (" + Txtbx1_1_5alcim.Text + ".)" + "</em>";
+
+            if (Txtbx1_1_6kotetszam.Text != "")
+                mezok = mezok + " " + Txtbx1_1_6kotetszam.Text + ".";
+
+            if (Txtbx1_1_7kiadasszam.Text != "")
+                mezok = mezok + " " + Txtbx1_1_7kiadasszam.Text + ".";
+
+            if (Txtbx1_1_8sorozat.Text != "")
+                mezok = mezok + " (" + Txtbx1_1_8sorozat.Text + ")";
+
+            if (Cmbbx1_1_9mujelleg.SelectedItem == null)
+            {
+                MessageBox.Show("Nincs kiválasztva elem a legördülő listából!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            else mezok = mezok +
+                " (" + Cmbbx1_1_9mujelleg.SelectedValue.ToString() + ").";
+
+            if (Txtbx1_1_10kiadashelye.Text != "")
+                mezok = mezok + " " + Txtbx1_1_10kiadashelye.Text;
 
             if (Txtbx1_1_11kiado.Text == "")
             { mezok = mezok + "."; }
             else mezok = mezok + " : " + Txtbx1_1_11kiado.Text + ".";
 
-            mezok = mezok +
-                " (" + Txtbx1_1_12lapokszama.Text + " lap).";
+            if (Txtbx1_1_12lapokszama.Text != "")
+                mezok = mezok +
+                    " (" + Txtbx1_1_12lapokszama.Text + " lap).";
 
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();
@@ -114,33 +139,192 @@ namespace UniDeb
 
         private void Btn_1_2_1Continue_Click(object sender, RoutedEventArgs e)
         {
-            String mezok =
-                "<strong>" + Txtbx1_2_1.Text + "</strong>" + " szerk." +
-                " (" + Txtbx1_2_2.Text + "): " +
-                "<em> " + Txtbx1_2_3.Text + ".</em>" +
-                "<em> " + Txtbx1_2_4.Text + ".</em>" +
-                "<em> (" + Txtbx1_2_5.Text + ".)</em>" +
-                " " + Txtbx1_2_6.Text + "." +
-                " " + Txtbx1_2_7.Text + "." +
-                " (" + Txtbx1_2_8.Text + ")" +
-                " (" + Cmbbx1_2_1.SelectedValue.ToString() + ")" +
-                " " + Txtbx1_2_9
-                ;
+            String mezok = "";
+
+            if (Txtbx1_2_1.Text != "")
+                mezok = mezok + "<strong>" + Txtbx1_2_1.Text + "</strong>" + " szerk.";
+
+            if (Txtbx1_2_2.Text != "")
+                mezok = mezok + " (" + Txtbx1_2_2.Text + "): ";
+
+            if (Txtbx1_2_3.Text != "")
+                mezok = mezok + "<em> " + Txtbx1_2_3.Text + ".</em>";
+
+            if (Txtbx1_2_4.Text != "")
+                mezok = mezok + "<em> " + Txtbx1_2_4.Text + ".</em>";
+
+            if (Txtbx1_2_5.Text != "")
+                mezok = mezok + "<em> (" + Txtbx1_2_5.Text + ".)</em>";
+
+            if (Txtbx1_2_6.Text != "")
+                mezok = mezok + " " + Txtbx1_2_6.Text + ".";
+
+            if (Txtbx1_2_7.Text != "")
+                mezok = mezok + " " + Txtbx1_2_7.Text + ".";
+
+            if (Txtbx1_2_8.Text != "")
+                mezok = mezok + " (" + Txtbx1_2_8.Text + ")";
+
+            if (Cmbbx1_2_1.SelectedItem == null)
+            {
+                MessageBox.Show("Nincs kiválasztva elem a legördülő listából!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            else mezok = mezok +
+                " (" + Cmbbx1_2_1.SelectedValue.ToString() + ")";
+
+            if (Txtbx1_2_9.Text != "")
+                mezok = mezok + " " + Txtbx1_2_9.Text;
 
             if (Txtbx1_2_10.Text == "")
             { mezok = mezok + "."; }
             else mezok = mezok + " : " + Txtbx1_2_10.Text + ".";
 
-            mezok = mezok + " (" + Txtbx1_2_11 + " lap).";
+            mezok = mezok + " (" + Txtbx1_2_11.Text + " lap).";
 
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();
         }
 
-        private void Btn_1_5_1Continue_Click(object sender, RoutedEventArgs e)
+
+
+        private void Btn_1_3_1Continue_Click(object sender, RoutedEventArgs e)
         {
-            WizardPage2 wiz2 = new WizardPage2("");
+            String mezok = "";
+            if (Txtbx1_3_1.Text != "")
+                mezok = mezok + "<strong>" + Txtbx1_3_1.Text + "</strong>";
+
+            if (Txtbx1_3_2.Text != "")
+                mezok = mezok + " (" + Txtbx1_3_2.Text + "):";
+
+            if (Txtbx1_3_3.Text != "")
+                mezok = mezok + " " + Txtbx1_3_3.Text + ". ";
+
+            if (Txtbx1_3_4.Text != "")
+                mezok = mezok + "<em> " + Txtbx1_3_4.Text + "." + "</em>";
+
+            if (Txtbx1_3_5.Text != "")
+                mezok = mezok + "<em> (" + Txtbx1_3_5.Text + ".)</em>";
+
+            if (Txtbx1_3_6.Text != "")
+                mezok = mezok + " In: <strong>" + Txtbx1_3_6.Text + "</strong> szerk.:";
+
+            if (Txtbx1_3_7.Text != "")
+                mezok = mezok + "<em> " + Txtbx1_3_7.Text + ".</em>";
+
+            if (Txtbx1_3_8.Text != "")
+                mezok = mezok + "<em> " + Txtbx1_3_8.Text + ".</em>";
+
+            if (Txtbx1_3_9.Text != "")
+                mezok = mezok + "<em> (" + Txtbx1_3_9.Text + ".)</em>";
+
+            if (Txtbx1_3_10.Text != "")
+                mezok = mezok + " " + Txtbx1_3_10.Text + ".";
+
+            if (Txtbx1_3_11.Text != "")
+                mezok = mezok + " " + Txtbx1_3_11.Text + ".";
+
+            if (Txtbx1_3_12.Text != "")
+                mezok = mezok + " (" + Txtbx1_3_12.Text + ")";
+
+            if (Cmbbx1_3_1.SelectedItem == null)
+            {
+                MessageBox.Show("Nincs kiválasztva elem a legördülő listából!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            else mezok = mezok +
+                " (" + Cmbbx1_3_1.SelectedValue.ToString() + ").";
+
+            if (Txtbx1_3_13.Text != "")
+                mezok = mezok + " " + Txtbx1_3_13.Text;
+
+            if (Txtbx1_3_14.Text == "")
+                mezok = mezok + ".";
+            else mezok = mezok +
+                " : " + Txtbx1_3_14.Text + ".";
+
+            if (Txtbx1_3_15.Text != "")
+                mezok = mezok + " " + Txtbx1_3_15.Text + ".";
+
+            WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();
         }
+
+        private void Btn_1_4_1Continue_Click(object sender, RoutedEventArgs e)
+        {
+            String mezok = "";
+
+            if (Txtbx1_4_1.Text != "")
+                mezok = mezok + "<strong>" + Txtbx1_4_1.Text + "</strong>";
+
+            if (Txtbx1_4_2.Text != "")
+                mezok = mezok + " (" + Txtbx1_4_2.Text + "):";
+
+            if (Txtbx1_4_3.Text != "")
+                mezok = mezok + " " + Txtbx1_4_3.Text + ". ";
+
+            if (Txtbx1_4_4.Text != "")
+                mezok = mezok + " " + Txtbx1_4_4.Text + ".";
+
+            if (Txtbx1_4_5.Text != "")
+                mezok = mezok + " (" + Txtbx1_4_5.Text + ".)";
+
+            if (Txtbx1_4_6.Text != "")
+                mezok = mezok + "<em> " + Txtbx1_4_6.Text + "</em>";
+
+            if (Txtbx1_4_7.Text != "")
+                mezok = mezok + "<em> " + Txtbx1_4_7.Text + "</em>";
+
+            if (Txtbx1_4_8.Text != "")
+                mezok = mezok + "<em> /" + Txtbx1_4_8.Text + "</em>";
+
+            if (Txtbx1_4_9.Text == "")
+                mezok = mezok + ".";
+            else mezok = mezok + ": " + Txtbx1_4_9.Text + ".";
+
+            WizardPage2 wiz2 = new WizardPage2(mezok);
+            wiz2.Show();
+
+        }
+
+        private void Btn_1_5_1Continue_Click(object sender, RoutedEventArgs e)
+        {
+            String mezok = "";
+            if (Txtbx1_5_1.Text != "")
+                mezok = "<strong>" + Txtbx1_5_1.Text + "</strong>";
+
+            if (Txtbx1_5_2.Text != "")
+                mezok = mezok + " (" + Txtbx1_5_2.Text + "):";
+
+            if (Txtbx1_5_3.Text != "")
+                mezok = mezok + " " + Txtbx1_5_3.Text + ".";
+
+            if (Txtbx1_5_4.Text != "")
+                mezok = mezok + " " + Txtbx1_5_4.Text + ".";
+
+            if (Txtbx1_5_5.Text != "")
+                mezok = mezok + " (" + Txtbx1_5_5.Text + ".)";
+
+            if (Txtbx1_5_6.Text != "")
+                mezok = mezok + "<em> " + Txtbx1_5_6.Text + "</em>";
+
+            if (Txtbx1_5_7.Text != "")
+                mezok = mezok + "<em> " + Txtbx1_5_7.Text + "</em>";
+
+            if (Txtbx1_5_8.Text != "")
+                mezok = mezok + "<em>/" + Txtbx1_5_8.Text + "</em>";
+
+            if (Txtbx1_5_9.Text != "")
+                mezok = mezok + " (" + Txtbx1_5_9.Text + ")";
+
+            if (Txtbx1_5_10.Text != "")
+                mezok = mezok + ": " + Txtbx1_5_10.Text + ".";
+            else mezok = mezok + ".";
+
+            WizardPage2 wiz2 = new WizardPage2(mezok);
+            wiz2.Show();
+        }
+
+
     }
 }

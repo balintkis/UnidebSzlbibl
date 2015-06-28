@@ -39,13 +39,15 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="10. Publikáció célja:" Width="150"  />
-                    <TextBox x:Name="Txtbx3_1_10" Width="400" />
+                    <TextBox x:Name="Txtbx3_1_9" Width="400" />
                 </StackPanel>
-                <Button x:Name="BtnPreview" Content="Előnézet" Margin="15,250,15,15"/>
+                <Button x:Name="BtnPreview" Content="Előnézet" Margin="15,250,15,15" Click="BtnPreview_Click"/>
+                <Button x:Name="BtnHTMLPreview" Content="HTML előnézet" Margin="15,0,15,15" Click="BtnHTMLPreview_Click"/>
                 <Button x:Name="BtnUpload" Content="Feltöltés" Margin="15,0,15,15"/>
+                
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBox AcceptsReturn="True" Width="350" />
+                <TextBox x:Name="TxtbxPreview" AcceptsReturn="True" TextWrapping="Wrap" Width="350" />
             </StackPanel>
             
         </StackPanel>

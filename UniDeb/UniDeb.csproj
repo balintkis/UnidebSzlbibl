@@ -57,6 +57,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="HTMLPreviewWindow.xaml.cs">
+      <DependentUpon>HTMLPreviewWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service.cs" />
     <Compile Include="WizardPage2.xaml.cs">
       <DependentUpon>WizardPage2.xaml</DependentUpon>
@@ -65,6 +68,10 @@
       <DependentUpon>WizardPage3.xaml</DependentUpon>
     </Compile>
     <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HTMLPreviewWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

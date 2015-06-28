@@ -1,0 +1,9 @@
+﻿<Window x:Class="UniDeb.HTMLPreviewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="HTMLPreviewWindow" Height="650" Width="900">
+    <Grid>
+        <WebBrowser x:Name="WbBrwsrPreview">
+        </WebBrowser>
+    </Grid>
+</Window>

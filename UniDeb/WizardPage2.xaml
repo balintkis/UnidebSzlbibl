@@ -13,60 +13,71 @@
                 <TextBox x:Name="Txtbx2_1_2" Width="400"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Rezümé:" Width="150" />
+                <Label Content=" Megtalálható:" Width="150" />
                 <TextBox x:Name="Txtbx2_1_3" Width="400"/>
             </StackPanel>
+           
             <StackPanel Orientation="Horizontal">
-                <Label Content="URL:" Width="150" />
+                <Label Content="Rezümé:" Width="150" />
                 <TextBox x:Name="Txtbx2_1_4" Width="400"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Közzéteszi:" Width="150" />
+                <Label Content="URL:" Width="150" />
                 <TextBox x:Name="Txtbx2_1_5" Width="400"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Különlenyomat:" Width="150" />
+                <Label Content="Közzéteszi:" Width="150" />
                 <TextBox x:Name="Txtbx2_1_6" Width="400"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Változatlan kiadása:" Width="150" />
+                <Label Content="Különlenyomat:" Width="150" />
                 <TextBox x:Name="Txtbx2_1_7" Width="400"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Újraközlése:" Width="150" />
+                <Label Content="Eredeti közlése::" Width="150" />
                 <TextBox x:Name="Txtbx2_1_8" Width="400"/>
             </StackPanel>
+            
+
             <StackPanel Orientation="Horizontal">
-                <Label Content="Első kiadása:" Width="150" />
+                <Label Content="Változatlan kiadása:" Width="150" />
                 <TextBox x:Name="Txtbx2_1_9" Width="400"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Újabb kiadása::" Width="150" />
+                <Label Content="Újraközlése:" Width="150" />
                 <TextBox x:Name="Txtbx2_1_10" Width="400"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Idézi:" Width="150" />
+                <Label Content="Első kiadása:" Width="150" />
                 <TextBox x:Name="Txtbx2_1_11" Width="400"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Hivatkozik rá:" Width="150" />
+                <Label Content="Újabb kiadása::" Width="150" />
                 <TextBox x:Name="Txtbx2_1_12" Width="400"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Ismerteti:" Width="150" />
+                <Label Content="Idézi:" Width="150" />
                 <TextBox x:Name="Txtbx2_1_13" Width="400"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Ajánlja:" Width="150" />
+                <Label Content="Hivatkozik rá:" Width="150" />
                 <TextBox x:Name="Txtbx2_1_14" Width="400"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Előzménye:" Width="150" />
+                <Label Content="Ismerteti:" Width="150" />
                 <TextBox x:Name="Txtbx2_1_15" Width="400"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Válaszol rá:" Width="150" />
+                <Label Content="Ajánlja:" Width="150" />
                 <TextBox x:Name="Txtbx2_1_16" Width="400"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Előzménye:" Width="150" />
+                <TextBox x:Name="Txtbx2_1_17" Width="400"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Válaszol rá:" Width="150" />
+                <TextBox x:Name="Txtbx2_1_18" Width="400"/>
             </StackPanel>
 
             <Button x:Name="Btn_1_5_1Continue" Content="Tovább!"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" Click="Btn_1_5_1Continue_Click"  />

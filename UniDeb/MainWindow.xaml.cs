@@ -88,7 +88,7 @@ namespace UniDeb
 
         private void Btn_1_1_1Continue_Click(object sender, RoutedEventArgs e)
         {
-            String mezok = "";
+            String mezok = @"<span class=""kiemelt"">";
 
             if (Txtbx1_1_1szerzo.Text != "")
                 mezok = mezok + "<strong>" + Txtbx1_1_1szerzo.Text + "</strong>";
@@ -114,13 +114,8 @@ namespace UniDeb
             if (Txtbx1_1_8sorozat.Text != "")
                 mezok = mezok + " (" + Txtbx1_1_8sorozat.Text + ")";
 
-            if (Cmbbx1_1_9mujelleg.SelectedItem == null)
-            {
-                MessageBox.Show("Nincs kiválasztva elem a legördülő listából!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            else mezok = mezok +
-                " (" + Cmbbx1_1_9mujelleg.SelectedValue.ToString() + ").";
+            if (Cmbbx1_1_9mujelleg.SelectedItem != null)
+                mezok = mezok + " (" + Cmbbx1_1_9mujelleg.SelectedValue.ToString() + ").";
 
             if (Txtbx1_1_10kiadashelye.Text != "")
                 mezok = mezok + " " + Txtbx1_1_10kiadashelye.Text;
@@ -133,13 +128,15 @@ namespace UniDeb
                 mezok = mezok +
                     " (" + Txtbx1_1_12lapokszama.Text + " lap).";
 
+            mezok = mezok + "</span>";
+
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();
         }
 
         private void Btn_1_2_1Continue_Click(object sender, RoutedEventArgs e)
         {
-            String mezok = "";
+            String mezok = @"<span class=""kiemelt"">";
 
             if (Txtbx1_2_1.Text != "")
                 mezok = mezok + "<strong>" + Txtbx1_2_1.Text + "</strong>" + " szerk.";
@@ -165,13 +162,9 @@ namespace UniDeb
             if (Txtbx1_2_8.Text != "")
                 mezok = mezok + " (" + Txtbx1_2_8.Text + ")";
 
-            if (Cmbbx1_2_1.SelectedItem == null)
-            {
-                MessageBox.Show("Nincs kiválasztva elem a legördülő listából!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            else mezok = mezok +
-                " (" + Cmbbx1_2_1.SelectedValue.ToString() + ")";
+            if (Cmbbx1_2_1.SelectedItem != null)
+                mezok = mezok +
+                    " (" + Cmbbx1_2_1.SelectedValue.ToString() + ")";
 
             if (Txtbx1_2_9.Text != "")
                 mezok = mezok + " " + Txtbx1_2_9.Text;
@@ -182,6 +175,8 @@ namespace UniDeb
 
             mezok = mezok + " (" + Txtbx1_2_11.Text + " lap).";
 
+            mezok = mezok + "</span>";
+
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();
         }
@@ -190,7 +185,7 @@ namespace UniDeb
 
         private void Btn_1_3_1Continue_Click(object sender, RoutedEventArgs e)
         {
-            String mezok = "";
+            String mezok = @"<span class=""kiemelt"">";
             if (Txtbx1_3_1.Text != "")
                 mezok = mezok + "<strong>" + Txtbx1_3_1.Text + "</strong>";
 
@@ -227,13 +222,9 @@ namespace UniDeb
             if (Txtbx1_3_12.Text != "")
                 mezok = mezok + " (" + Txtbx1_3_12.Text + ")";
 
-            if (Cmbbx1_3_1.SelectedItem == null)
-            {
-                MessageBox.Show("Nincs kiválasztva elem a legördülő listából!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            else mezok = mezok +
-                " (" + Cmbbx1_3_1.SelectedValue.ToString() + ").";
+            if (Cmbbx1_3_1.SelectedItem != null)
+                mezok = mezok +
+                                " (" + Cmbbx1_3_1.SelectedValue.ToString() + ").";
 
             if (Txtbx1_3_13.Text != "")
                 mezok = mezok + " " + Txtbx1_3_13.Text;
@@ -246,13 +237,15 @@ namespace UniDeb
             if (Txtbx1_3_15.Text != "")
                 mezok = mezok + " " + Txtbx1_3_15.Text + ".";
 
+            mezok = mezok + "</span>";
+
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();
         }
 
         private void Btn_1_4_1Continue_Click(object sender, RoutedEventArgs e)
         {
-            String mezok = "";
+            String mezok = @"<span class=""kiemelt"">";
 
             if (Txtbx1_4_1.Text != "")
                 mezok = mezok + "<strong>" + Txtbx1_4_1.Text + "</strong>";
@@ -282,6 +275,8 @@ namespace UniDeb
                 mezok = mezok + ".";
             else mezok = mezok + ": " + Txtbx1_4_9.Text + ".";
 
+            mezok = mezok + "</span>";
+
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();
 
@@ -289,7 +284,7 @@ namespace UniDeb
 
         private void Btn_1_5_1Continue_Click(object sender, RoutedEventArgs e)
         {
-            String mezok = "";
+            String mezok = @"<span class=""kiemelt"">";
             if (Txtbx1_5_1.Text != "")
                 mezok = "<strong>" + Txtbx1_5_1.Text + "</strong>";
 
@@ -320,6 +315,8 @@ namespace UniDeb
             if (Txtbx1_5_10.Text != "")
                 mezok = mezok + ": " + Txtbx1_5_10.Text + ".";
             else mezok = mezok + ".";
+
+            mezok = mezok + "</span>";
 
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();

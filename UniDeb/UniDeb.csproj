@@ -61,6 +61,7 @@
       <DependentUpon>HTMLPreviewWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service.cs" />
+    <Compile Include="StringArray.cs" />
     <Compile Include="WizardPage2.xaml.cs">
       <DependentUpon>WizardPage2.xaml</DependentUpon>
     </Compile>

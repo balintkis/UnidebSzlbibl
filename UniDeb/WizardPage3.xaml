@@ -11,6 +11,145 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="3. Használat helye:" Width="150"  />
+                    <ComboBox x:Name="Cmbbx3_1_3helye">
+                        <ComboBoxItem Content="Angyalföld" />
+                        <ComboBoxItem Content="Arad" />
+                        <ComboBoxItem Content="Aszód" />
+                        <ComboBoxItem Content="Bácsfeketehegy" />
+                        <ComboBoxItem Content="Baja" />
+                        <ComboBoxItem Content="Balassagyarmat" />
+                        <ComboBoxItem Content="Balmazújváros" />
+                        <ComboBoxItem Content="Békés megye" />
+                        <ComboBoxItem Content="Békéscsaba" />
+                        <ComboBoxItem Content="Békéssámson" />
+                        <ComboBoxItem Content="Belényes" />
+                        <ComboBoxItem Content="Berettyóújfalu" />
+                        <ComboBoxItem Content="Bodos" />
+                        <ComboBoxItem Content="Bonyhád" />
+                        <ComboBoxItem Content="Borjád" />
+                        <ComboBoxItem Content="Borzavár" />
+                        <ComboBoxItem Content="Budapest" />
+                        <ComboBoxItem Content="Buj" />
+                        <ComboBoxItem Content="Cegléd" />
+                        <ComboBoxItem Content="Csallóköz" />
+                        <ComboBoxItem Content="Csíksomlyó" />
+                        <ComboBoxItem Content="Csíkszereda" />
+                        <ComboBoxItem Content="Debrecen" />
+                        <ComboBoxItem Content="Demecser" />
+                        <ComboBoxItem Content="Déva" />
+                        <ComboBoxItem Content="Döge" />
+                        <ComboBoxItem Content="Dunaharaszti" />
+                        <ComboBoxItem Content="Dunakeszi" />
+                        <ComboBoxItem Content="Eger" />
+                        <ComboBoxItem Content="Egyházgelle" />
+                        <ComboBoxItem Content="Endrőd" />
+                        <ComboBoxItem Content="Ercsi" />
+                        <ComboBoxItem Content="Érd" />
+                        <ComboBoxItem Content="Erdély" />
+                        <ComboBoxItem Content="Farmos" />
+                        <ComboBoxItem Content="Fehérgyarmat" />
+                        <ComboBoxItem Content="Félegyháza" />
+                        <ComboBoxItem Content="Felsőrákos" />
+                        <ComboBoxItem Content="Fertőszéplak" />
+                        <ComboBoxItem Content="Fülek" />
+                        <ComboBoxItem Content="Gödöllő" />
+                        <ComboBoxItem Content="Gunaras" />
+                        <ComboBoxItem Content="Gyergyócsomafalva" />
+                        <ComboBoxItem Content="Gyergyószentmiklós" />
+                        <ComboBoxItem Content="Győr" />
+                        <ComboBoxItem Content="Győr-Moson-Sopron m." />
+                        <ComboBoxItem Content="Gyula" />
+                        <ComboBoxItem Content="Hajdúböszörmény" />
+                        <ComboBoxItem Content="Hajdúnánás" />
+                        <ComboBoxItem Content="Halas" />
+                        <ComboBoxItem Content="Hatvan" />
+                        <ComboBoxItem Content="Igló" />
+                        <ComboBoxItem Content="Izsa" />
+                        <ComboBoxItem Content="Jászalsószentgyörgy" />
+                        <ComboBoxItem Content="Jászapáti" />
+                        <ComboBoxItem Content="Jászárokszállás" />
+                        <ComboBoxItem Content="Jászberény" />
+                        <ComboBoxItem Content="Jászdózsa" />
+                        <ComboBoxItem Content="Jászfényszaru" />
+                        <ComboBoxItem Content="Jászkisér" />
+                        <ComboBoxItem Content="Jászszentandrás" />
+                        <ComboBoxItem Content="Kalocsa" />
+                        <ComboBoxItem Content="Kaposvár" />
+                        <ComboBoxItem Content="Karcag" />
+                        <ComboBoxItem Content="Kazincbarcika" />
+                        <ComboBoxItem Content="Kecskemét" />
+                        <ComboBoxItem Content="Késmárk" />
+                        <ComboBoxItem Content="Kisköre" />
+                        <ComboBoxItem Content="Kisújszállás" />
+                        <ComboBoxItem Content="Kisvárda" />
+                        <ComboBoxItem Content="Kolozsvár" />
+                        <ComboBoxItem Content="Körmend" />
+                        <ComboBoxItem Content="Körmöcbánya" />
+                        <ComboBoxItem Content="Kőszeg" />
+                        <ComboBoxItem Content="Kunság" />
+                        <ComboBoxItem Content="Kutas" />
+                        <ComboBoxItem Content="Lenti" />
+                        <ComboBoxItem Content="Léva" />
+                        <ComboBoxItem Content="Losonc" />
+                        <ComboBoxItem Content="Lugos" />
+                        <ComboBoxItem Content="Magyarkanizsa" />
+                        <ComboBoxItem Content="Marcali" />
+                        <ComboBoxItem Content="Marosvásárhely" />
+                        <ComboBoxItem Content="Mátészalka" />
+                        <ComboBoxItem Content="Mezőtárkány" />
+                        <ComboBoxItem Content="Miskolc" />
+                        <ComboBoxItem Content="Nagybánya" />
+                        <ComboBoxItem Content="Nagybecskerek" />
+                        <ComboBoxItem Content="Nagyhalász" />
+                        <ComboBoxItem Content="Nagykálló" />
+                        <ComboBoxItem Content="Nagykanizsa" />
+                        <ComboBoxItem Content="Nagykapos" />
+                        <ComboBoxItem Content="Nagykőrös" />
+                        <ComboBoxItem Content="Nagyszombat" />
+                        <ComboBoxItem Content="Nyírbátor" />
+                        <ComboBoxItem Content="Nyíregyháza" />
+                        <ComboBoxItem Content="Nyitra" />
+                        <ComboBoxItem Content="Orosháza" />
+                        <ComboBoxItem Content="Pacsér" />
+                        <ComboBoxItem Content="Pápa" />
+                        <ComboBoxItem Content="Pásztó" />
+                        <ComboBoxItem Content="Pécs" />
+                        <ComboBoxItem Content="Pozsony" />
+                        <ComboBoxItem Content="Pród" />
+                        <ComboBoxItem Content="Rimaszombat" />
+                        <ComboBoxItem Content="Sajószentpéter" />
+                        <ComboBoxItem Content="Sárbogárd" />
+                        <ComboBoxItem Content="Sárospatak" />
+                        <ComboBoxItem Content="Sárrétudvari" />
+                        <ComboBoxItem Content="Sátoraljaújhely" />
+                        <ComboBoxItem Content="Selmecbánya" />
+                        <ComboBoxItem Content="Simánd" />
+                        <ComboBoxItem Content="Somogy" />
+                        <ComboBoxItem Content="Sopron" />
+                        <ComboBoxItem Content="Sopron megye" />
+                        <ComboBoxItem Content="Sopronkőhida" />
+                        <ComboBoxItem Content="Szarvas" />
+                        <ComboBoxItem Content="Szászváros" />
+                        <ComboBoxItem Content="Szatmárnémeti" />
+                        <ComboBoxItem Content="Szeged" />
+                        <ComboBoxItem Content="Székesfehérvár" />
+                        <ComboBoxItem Content="Szekszárd" />
+                        <ComboBoxItem Content="Szentgotthárd" />
+                        <ComboBoxItem Content="Szentlőrinckáta" />
+                        <ComboBoxItem Content="Szlovákia" />
+                        <ComboBoxItem Content="Szolnok" />
+                        <ComboBoxItem Content="Szombathely" />
+                        <ComboBoxItem Content="Szőgyén" />
+                        <ComboBoxItem Content="Tata" />
+                        <ComboBoxItem Content="Újszász" />
+                        <ComboBoxItem Content="Ungvár" />
+                        <ComboBoxItem Content="Vác" />
+                        <ComboBoxItem Content="Vajdaság" />
+                        <ComboBoxItem Content="Veszprém" />
+                        <ComboBoxItem Content="Zalaegerszeg" />
+                        <ComboBoxItem Content="Zombor" />
+                        <ComboBoxItem Content="Zselíz" />
+                    </ComboBox>
                     <TextBox x:Name="Txtbx3_1_2" Width="400" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
@@ -19,10 +158,63 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="5. Szlengtípus:" Width="150"  />
+                    <ComboBox x:Name="Cmbbx3_1_2szlengtipus">
+                        <ComboBoxItem Content="autós" />
+                        <ComboBoxItem Content="barlangász" />
+                        <ComboBoxItem Content="betyár" />
+                        <ComboBoxItem Content="börtön" />
+                        <ComboBoxItem Content="csibésznyelv" />
+                        <ComboBoxItem Content="diáknyelv (Ld. még ifjúsági nyelv)" />
+                        <ComboBoxItem Content="egyetemista" />
+                        <ComboBoxItem Content="fattyúnyelv" />
+                        <ComboBoxItem Content="futballszurkoló" />
+                        <ComboBoxItem Content="golyózás" />
+                        <ComboBoxItem Content="hajléktalanok" />
+                        <ComboBoxItem Content="hamiskártyás (Ld. még kártyás)" />
+                        <ComboBoxItem Content="hippi" />
+                        <ComboBoxItem Content="ifjúsági nyelv" />
+                        <ComboBoxItem Content="informatikai" />
+                        <ComboBoxItem Content="internetszleng" />
+                        <ComboBoxItem Content="jassznyelv" />
+                        <ComboBoxItem Content="javítóintézeti (Ld. még nevelőotthoni)" />
+                        <ComboBoxItem Content="kábítószeres" />
+                        <ComboBoxItem Content="kártyás (Ld. még hamiskártyás)" />
+                        <ComboBoxItem Content="katonai" />
+                        <ComboBoxItem Content="kerékpáros" />
+                        <ComboBoxItem Content="kismamaszleng" />
+                        <ComboBoxItem Content="koldus" />
+                        <ComboBoxItem Content="kosárlabda" />
+                        <ComboBoxItem Content="kuglizás" />
+                        <ComboBoxItem Content="külvárosi" />
+                        <ComboBoxItem Content="labdarúgás" />
+                        <ComboBoxItem Content="lágerszleng" />
+                        <ComboBoxItem Content="nevelőotthoni (Ld. még javítóintézeti)0" />
+                        <ComboBoxItem Content="rendőr" />
+                        <ComboBoxItem Content="repülős" />
+                        <ComboBoxItem Content="rockzenész" />
+                        <ComboBoxItem Content="taxis" />
+                        <ComboBoxItem Content="technikus" />
+                        <ComboBoxItem Content="tolvajnyelv" />
+                    </ComboBox>
                     <TextBox x:Name="Txtbx3_1_4" Width="400" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="6. Mely nyelv szlengje:" Width="150"  />
+
+                    <ComboBox x:Name="Cmbbx3_1_1nyelv" SelectedValuePath="Content">
+                        <ComboBoxItem Content="angol" />
+                        <ComboBoxItem Content="angol-amerikai" />
+                        <ComboBoxItem Content="észt" />
+                        <ComboBoxItem Content="finn" />
+                        <ComboBoxItem Content="francia" />
+                        <ComboBoxItem Content="horvát" />
+                        <ComboBoxItem Content="lengyel" />
+                        <ComboBoxItem Content="mongol" />
+                        <ComboBoxItem Content="német" />
+                        <ComboBoxItem Content="orosz" />
+                        <ComboBoxItem Content="szlovák" />
+                    </ComboBox>
+
                     <TextBox x:Name="Txtbx3_1_5" Width="400" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
@@ -43,13 +235,13 @@
                 </StackPanel>
                 <Button x:Name="BtnPreview" Content="Előnézet" Margin="15,250,15,15" Click="BtnPreview_Click"/>
                 <Button x:Name="BtnHTMLPreview" Content="HTML előnézet" Margin="15,0,15,15" Click="BtnHTMLPreview_Click"/>
-                <Button x:Name="BtnUpload" Content="Feltöltés" Margin="15,0,15,15"/>
-                
+                <Button x:Name="BtnUpload" Content="Feltöltés" Margin="15,0,15,15" Click="BtnUpload_Click"/>
+
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBox x:Name="TxtbxPreview" AcceptsReturn="True" TextWrapping="Wrap" Width="350" />
             </StackPanel>
-            
+
         </StackPanel>
     </Grid>
 </Window>

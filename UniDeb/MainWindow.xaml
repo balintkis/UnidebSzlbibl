@@ -344,7 +344,7 @@
                                     <DataGrid  Height="470" Width="800" AutoGenerateColumns="True" CanUserResizeColumns="True" CanUserReorderColumns="True" x:Name="DgrReadWrite" ItemsSource="{Binding ''}"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" />
                                     <StackPanel VerticalAlignment="Bottom">
                                         <Button x:Name="BtnDisplay2" Content="Beolvasás" Width="95" Height="25" Margin="10,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="BtnDisplay2_Click" />
-                                        <Button x:Name="BtnDelete" Content="Törlés" Width="95" Height="25" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+                                        <Button x:Name="BtnDelete" Content="Törlés" Width="95" Height="25" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="BtnDelete_Click" />
                                         <Button x:Name="BtnCopy" Content="Másolás" Width="95" Height="25" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
                                     </StackPanel>
                                 </StackPanel>

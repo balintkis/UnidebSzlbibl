@@ -22,8 +22,10 @@ namespace UniDeb
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
     public partial class MainWindow : Window
     {
+        private DataTable dt2 = new DataTable();
         public MainWindow()
         {
             InitializeComponent();
@@ -73,9 +75,9 @@ namespace UniDeb
             {
                 MySqlConnection connection = new MySqlConnection(connStr);
                 MySqlCommand cmdSel = new MySqlCommand(sql, connection);
-                DataTable dt2 = new DataTable();
+
                 MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel);
-                da2.Fill(dt2);
+                da2.Fill(this.dt2);
                 DgrReadWrite.DataContext = dt2;
             }
             catch (Exception ex)
@@ -324,5 +326,26 @@ namespace UniDeb
         }
 
 
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            
+            for (int i = 0; i < this.dt2.Rows.Count; i++)
+            {
+//DgrReadWrite.SelectedCells.
+                // looping through DgrReadWrite.SelectedItems.Cast<SomethingReadable??>
+                if ("" == this.dt2.Rows[i][0].ToString())
+                {   
+                    dt2.Rows[i].Delete();
+                    DgrReadWrite.Items.Refresh();
+                }
+            }
+
+        }
+
+
     }
+
+
+
 }
+

@@ -76,5 +76,10 @@ namespace UniDeb
             HTMLPreviewWindow htmlWindow = new HTMLPreviewWindow(htmlWebPage);
             htmlWindow.Show();
         }
+
+        private void BtnUpload_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -331,17 +331,55 @@ namespace UniDeb
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            
-            for (int i = 0; i < this.dt2.Rows.Count; i++)
+            /*
+            string strID = "";
+            DataRowView rowview = DgrReadWrite.SelectedItem as DataRowView;
+            strID = rowview.Row["index"].ToString();
+            MessageBox.Show("index : " + strID);*/
+
+            String ids = "";
+
+            // create a list of rows that need to be deleted
+            List<DataRow> listOfRowsToDelete = new List<DataRow>();
+            foreach (DataRowView drRow in DgrReadWrite.SelectedItems)
             {
-//DgrReadWrite.SelectedCells.
-                // looping through DgrReadWrite.SelectedItems.Cast<SomethingReadable??>
-                if ("" == this.dt2.Rows[i][0].ToString())
-                {   
-                    dt2.Rows[i].Delete();
-                    DgrReadWrite.Items.Refresh();
-                }
+                listOfRowsToDelete.Add(drRow.Row);
+                // put index numbers into a string for MySQL query
+                ids = ids + drRow["index"] + ",";
             }
+            // remove last ',' from query string
+            ids = ids.Remove(ids.Length - 1);
+
+            // delete all the rows from the datatable
+            foreach (DataRow drRow in listOfRowsToDelete)
+            {
+                dt2.Rows.Remove(drRow);
+                DgrReadWrite.Items.Refresh();
+            }
+
+
+            // delete from MySQL
+            // DELETE FROM table WHERE id IN (?,?,?,?,?,?,?,?)
+
+            string connStr = this.service.ConnectionString;
+
+            string sql = "DELETE FROM `tkis`.`adat` WHERE `adat`.`index` IN (" + ids + ")";
+            MySqlConnection connection = new MySqlConnection(connStr);
+            MessageBox.Show(sql);
+            try
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.ExecuteNonQuery();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("MySQL hiba!" + ex.ToString(), "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            connection.Close();
+            MessageBox.Show("Ezen indexű sorok törölve: " + ids);
 
         }
 

@@ -6,10 +6,23 @@ using System.Threading.Tasks;
 
 namespace UniDeb
 {
+    
     public class Service
     {
-        public static String getConnectionString(){
-            return "server=localhost;user=tkis;database=tkis;port=3306;password=7H4cNHo6;";
+        private static Service service;
+        public String ConnectionString { get; set; }
+
+        private Service() {
+            // empty constructor
         }
+
+        public static Service getInstance()
+        {
+            if (service == null)
+                service = new Service();
+            return service;
+        }
+
+     
     }
 }

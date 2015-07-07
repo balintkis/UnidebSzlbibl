@@ -25,11 +25,14 @@ namespace UniDeb
     /// 
     public partial class MainWindow : Window
     {
+        private Service service;
         private DataTable dt2 = new DataTable();
         public MainWindow()
         {
             InitializeComponent();
+            service = Service.getInstance();
         }
+
 
         private void MenuItemExit_Click(object sender, RoutedEventArgs e)
         {
@@ -43,7 +46,7 @@ namespace UniDeb
 
         private void BtnDisplay_Click(object sender, RoutedEventArgs e)
         {
-            string connStr = Service.getConnectionString();
+            string connStr = this.service.ConnectionString;
 
             string sql = "SELECT * FROM adat";
             try
@@ -68,7 +71,7 @@ namespace UniDeb
 
         private void BtnDisplay2_Click(object sender, RoutedEventArgs e)
         {
-            string connStr = Service.getConnectionString();
+            string connStr = this.service.ConnectionString;
 
             string sql = "SELECT * FROM adat";
             try
@@ -340,6 +343,12 @@ namespace UniDeb
                 }
             }
 
+        }
+
+        private void MenuItemMySql_Click(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
         }
 
 

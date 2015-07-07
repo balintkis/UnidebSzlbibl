@@ -14,8 +14,7 @@
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Header="_Adminisztratív eszközök">
-                    <MenuItem Header="_MySQL beállítások" />
-                    <MenuItem Header="_FTP beállítások" />
+                    <MenuItem Header="_MySQL beállítások" Click="MenuItemMySql_Click" />
                 </MenuItem>
                 <MenuItem Header="_Segítség!">
                     <MenuItem Header="_Weboldal" Click="MenuItemWeb_Click" />

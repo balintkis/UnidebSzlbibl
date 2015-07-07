@@ -1,0 +1,23 @@
+﻿<Window x:Class="UniDeb.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Login" Height="228.357" Width="430.348">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <Label Content="Adatbázis szerver URL: " Width="150" />
+                <TextBox x:Name="TxtbxUrl" Width="250"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Felhasználónév: " Width="150" />
+                <TextBox x:Name="TxtbxUsername" Width="250" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Jelszó: " Width="150" />
+                <TextBox x:Name="TxtbxPassword" Width="250" />
+            </StackPanel>
+            <Button x:Name="send" Content="Beállít" Margin="10,60,10,10" Click="send_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

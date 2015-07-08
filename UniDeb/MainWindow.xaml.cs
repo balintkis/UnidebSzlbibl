@@ -331,11 +331,6 @@ namespace UniDeb
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            string strID = "";
-            DataRowView rowview = DgrReadWrite.SelectedItem as DataRowView;
-            strID = rowview.Row["index"].ToString();
-            MessageBox.Show("index : " + strID);*/
 
             String ids = "";
 
@@ -361,7 +356,7 @@ namespace UniDeb
             // delete from MySQL
             // DELETE FROM table WHERE id IN (?,?,?,?,?,?,?,?)
 
-            string connStr = this.service.ConnectionString;
+            String connStr = this.service.ConnectionString;
 
             string sql = "DELETE FROM `tkis`.`adat` WHERE `adat`.`index` IN (" + ids + ")";
             MySqlConnection connection = new MySqlConnection(connStr);
@@ -387,6 +382,42 @@ namespace UniDeb
         {
             Login login = new Login();
             login.Show();
+        }
+
+        private void BtnCopy_Click(object sender, RoutedEventArgs e)
+        {
+
+            String connStr = this.service.ConnectionString;
+            MySqlConnection connection = new MySqlConnection(connStr);
+            MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand();
+            DataRowView rowview = DgrReadWrite.SelectedItem as DataRowView;
+
+            try
+            {
+                connection.Open();
+                cmd.Connection = connection;
+
+                cmd.CommandText = "INSERT INTO adat VALUES(NULL, @teljes_szoveg, @megjelenes_eve, @hasznalat_helye, @hasznalat_eve, @szlengtipus, @nyelv, @publikacio_tipusa, @adatkozles_formaja, @publikacio_temeja, @publikacio_celja)";
+                cmd.Prepare();
+
+                cmd.Parameters.AddWithValue("@teljes_szoveg", rowview.Row["teljes_szoveg"].ToString());
+                cmd.Parameters.AddWithValue("@megjelenes_eve", rowview.Row["megjelenes_eve"].ToString());
+                cmd.Parameters.AddWithValue("@hasznalat_helye", rowview.Row["hasznalat_helye"].ToString());
+                cmd.Parameters.AddWithValue("@hasznalat_eve", rowview.Row["hasznalat_eve"].ToString());
+                cmd.Parameters.AddWithValue("@szlengtipus", rowview.Row["szlengtipus"].ToString());
+                cmd.Parameters.AddWithValue("@nyelv", rowview.Row["nyelv"].ToString());
+                cmd.Parameters.AddWithValue("@publikacio_tipusa", rowview.Row["publikacio_tipusa"].ToString());
+                cmd.Parameters.AddWithValue("@adatkozles_formaja", rowview.Row["adatkozles_formaja"].ToString());
+                cmd.Parameters.AddWithValue("@publikacio_temeja", rowview.Row["publikacio_temeja"].ToString());
+                cmd.Parameters.AddWithValue("@publikacio_celja", rowview.Row["publikacio_celja"].ToString());
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
 

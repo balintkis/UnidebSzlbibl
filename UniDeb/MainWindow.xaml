@@ -6,7 +6,7 @@
     <Grid>
         <StackPanel Orientation="Vertical">
             <Menu Height="22" Name="menu1" Width="Auto" Margin="0, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top"  Background="White">
-                <MenuItem Header="_File">
+                <MenuItem Header="Fájl">
                     <MenuItem Header="_Bezárás" InputGestureText="Alt+F4" Click="MenuItemExit_Click" >
                         <!-- <MenuItem.Icon>
                              <Image Source="Images/ic_menu_exit.png" Width="20" Height="20"/> 
@@ -18,7 +18,7 @@
                 </MenuItem>
                 <MenuItem Header="_Segítség!">
                     <MenuItem Header="_Weboldal" Click="MenuItemWeb_Click" />
-                    <MenuItem Header="_About" Click="MenuItemAbout_Click"/>
+                    <MenuItem Header="_Névjegy" Click="MenuItemAbout_Click"/>
                 </MenuItem>
             </Menu>
 
@@ -26,7 +26,7 @@
 
                 <TabControl Height="599">
                     <TabItem Header="Adat bevitel">
-                        <Grid>
+                        <Grid Margin="15,15,0,0">
                             <StackPanel>
                                 <Label Content="Adat bevitel" FontSize="25" FontWeight="Bold"/>
                                 <Separator Margin="0,0,0,10" />
@@ -344,19 +344,9 @@
                                     <StackPanel VerticalAlignment="Bottom">
                                         <Button x:Name="BtnDisplay2" Content="Beolvasás" Width="95" Height="25" Margin="10,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="BtnDisplay2_Click" />
                                         <Button x:Name="BtnDelete" Content="Törlés" Width="95" Height="25" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="BtnDelete_Click" />
-                                        <Button x:Name="BtnCopy" Content="Másolás" Width="95" Height="25" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+                                        <Button x:Name="BtnCopy" Content="Másolás" Width="95" Height="25" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="BtnCopy_Click" />
                                     </StackPanel>
                                 </StackPanel>
-                            </StackPanel>
-                        </Grid>
-                    </TabItem>
-                    <TabItem Header="Adminisztráció">
-                        <Grid>
-                            <StackPanel>
-                                <Label Content="Adminisztráció" FontSize="25" FontWeight="Bold" />
-                                <Separator Margin="0,0,0,10" />
-                                <Button Content="PHP script futtatása" Margin="50,100,50,50" Height="50" />
-                                <Button Content="Adatbázis biztonsági mentése" Margin="50" Height="50" />
                             </StackPanel>
                         </Grid>
                     </TabItem>

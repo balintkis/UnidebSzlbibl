@@ -57,6 +57,7 @@ namespace UniDeb
                 MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
                 da.Fill(dt);
                 DgrReadOnly.DataContext = dt;
+                DgrReadOnly.Items.Refresh();
             }
             catch (Exception ex)
             {
@@ -71,6 +72,10 @@ namespace UniDeb
 
         private void BtnDisplay2_Click(object sender, RoutedEventArgs e)
         {
+            LoadRefreshDgrReadWrite();
+        }
+
+        private void LoadRefreshDgrReadWrite() {
             string connStr = this.service.ConnectionString;
 
             string sql = "SELECT * FROM adat";
@@ -82,13 +87,13 @@ namespace UniDeb
                 MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel);
                 da2.Fill(this.dt2);
                 DgrReadWrite.DataContext = dt2;
+                DgrReadWrite.Items.Refresh();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("MySQL kapcsolódási hiba!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
 
 
         private void Btn_1_1_1Continue_Click(object sender, RoutedEventArgs e)
@@ -331,51 +336,53 @@ namespace UniDeb
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-
-            String ids = "";
-
-            // create a list of rows that need to be deleted
-            List<DataRow> listOfRowsToDelete = new List<DataRow>();
-            foreach (DataRowView drRow in DgrReadWrite.SelectedItems)
+            MessageBoxResult result = MessageBox.Show("Biztosan végérvényesen törölni akarja a kijelölt rekordo(ka)t? A törölt elemek vissza nem állíthatóak.", "Figyelem!", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
             {
-                listOfRowsToDelete.Add(drRow.Row);
-                // put index numbers into a string for MySQL query
-                ids = ids + drRow["index"] + ",";
+
+                String ids = "";
+
+                // create a list of rows that need to be deleted
+                List<DataRow> listOfRowsToDelete = new List<DataRow>();
+                foreach (DataRowView drRow in DgrReadWrite.SelectedItems)
+                {
+                    listOfRowsToDelete.Add(drRow.Row);
+                    // put index numbers into a string for MySQL query
+                    ids = ids + drRow["index"] + ",";
+                }
+                // remove last ',' from query string
+                ids = ids.Remove(ids.Length - 1);
+
+                // delete all the rows from the datatable
+                foreach (DataRow drRow in listOfRowsToDelete)
+                {
+                    dt2.Rows.Remove(drRow);
+                    DgrReadWrite.Items.Refresh();
+                }
+
+
+                // delete from MySQL
+                // DELETE FROM table WHERE id IN (?,?,?,?,?,?,?,?)
+
+                String connStr = this.service.ConnectionString;
+
+                string sql = "DELETE FROM `tkis`.`adat` WHERE `adat`.`index` IN (" + ids + ")";
+                MySqlConnection connection = new MySqlConnection(connStr);
+                try
+                {
+                    connection.Open();
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    cmd.ExecuteNonQuery();
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show("MySQL hiba!" + ex.ToString(), "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+                connection.Close();
+                MessageBox.Show("Ezen indexű sorok törölve: " + ids);
             }
-            // remove last ',' from query string
-            ids = ids.Remove(ids.Length - 1);
-
-            // delete all the rows from the datatable
-            foreach (DataRow drRow in listOfRowsToDelete)
-            {
-                dt2.Rows.Remove(drRow);
-                DgrReadWrite.Items.Refresh();
-            }
-
-
-            // delete from MySQL
-            // DELETE FROM table WHERE id IN (?,?,?,?,?,?,?,?)
-
-            String connStr = this.service.ConnectionString;
-
-            string sql = "DELETE FROM `tkis`.`adat` WHERE `adat`.`index` IN (" + ids + ")";
-            MySqlConnection connection = new MySqlConnection(connStr);
-            MessageBox.Show(sql);
-            try
-            {
-                connection.Open();
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                cmd.ExecuteNonQuery();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("MySQL hiba!" + ex.ToString(), "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-
-            connection.Close();
-            MessageBox.Show("Ezen indexű sorok törölve: " + ids);
-
         }
 
         private void MenuItemMySql_Click(object sender, RoutedEventArgs e)
@@ -418,6 +425,8 @@ namespace UniDeb
             {
                 MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+            LoadRefreshDgrReadWrite();
+            
         }
 
 

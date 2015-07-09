@@ -1,14 +1,15 @@
 ﻿<Window x:Class="UniDeb.About"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="About" Height="233.333" Width="373.632" ResizeMode="NoResize">
+        Title="Névjegy" Height="233.333" Width="373.632" ResizeMode="NoResize" Background="#FFD4D0C8">
     <Grid>
         <Button Content="OK" HorizontalAlignment="Left" Margin="282,173,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Image HorizontalAlignment="Left" Height="45" Margin="10,10,0,0" VerticalAlignment="Top" Width="105" Source="/Images/logo.jpg"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="Auto" Width="163" RenderTransformOrigin="0.47,1.541">Version: 0.1 <LineBreak/>
-            <LineBreak/>Kis Tamás
+        <Image HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="253" Source="/Images/boot1.png" Margin="0,0,0,-25.667"/>
+        <TextBlock HorizontalAlignment="Right" Margin="10,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="Auto" Width="163" RenderTransformOrigin="0.47,1.541"><Bold>Adatbázis bevivő</Bold><LineBreak/>v. 0.2 <LineBreak/>
+            <LineBreak/><Bold>Kis Tamás</Bold>
             <LineBreak/>► tkis62@gmail.com
-            <LineBreak/>Kis Bálint
+            <LineBreak/>
+            <LineBreak/><Bold>Kis Bálint</Bold>
             <LineBreak/>► kis.balint42@gmail.com
         </TextBlock>
     </Grid>

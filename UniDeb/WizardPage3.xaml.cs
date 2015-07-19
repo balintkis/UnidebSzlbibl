@@ -31,7 +31,7 @@ namespace UniDeb
             this.service = Service.getInstance();
             InitializeComponent();
             mezok[0] = initString;
-            this.initString = initString + "$";
+            this.initString = initString;
             egybenString = this.initString;
 
         }
@@ -45,26 +45,93 @@ namespace UniDeb
 
         private void Strngesites()
         {
-            this.egybenString = this.egybenString
-                    + Txtbx3_1_2.Text + "$"
-                    + Cmbbx3_1_3helye.SelectedValue.ToString() + "$"
-                    + Txtbx3_1_4.Text + "$"
-                    + Cmbbx3_1_5szlengtipus.SelectedValue.ToString() + "$"
-                    + Cmbbx3_1_6nyelv.SelectedValue.ToString() + "$"
-                    + Cmbbx3_1_7publikacio_fajt.SelectedValue.ToString() + "$"
-                    + Cmbbx3_1_8adatkozl_forma.SelectedValue.ToString() + "$"
-                    + Cmbbx3_1_9publikacio_tema.SelectedValue.ToString() + "$"
-                    + Cmbbx3_1_10publikacio_celja.SelectedValue.ToString() + "$";
+            mezok[0] = "" + this.initString + "</span>";
+            this.egybenString = "";
+            this.egybenString = "" + this.egybenString + "</span>" + "$";
 
-            mezok[1] = Txtbx3_1_2.Text;
-            mezok[2] = Cmbbx3_1_3helye.SelectedValue.ToString();
-            mezok[3] = Txtbx3_1_4.Text;
-            mezok[4] = Cmbbx3_1_5szlengtipus.SelectedValue.ToString();
-            mezok[5] = Cmbbx3_1_6nyelv.SelectedValue.ToString();
-            mezok[6] = Cmbbx3_1_7publikacio_fajt.SelectedValue.ToString();
-            mezok[7] = Cmbbx3_1_8adatkozl_forma.SelectedValue.ToString();
-            mezok[8] = Cmbbx3_1_9publikacio_tema.SelectedValue.ToString();
-            mezok[9] = Cmbbx3_1_10publikacio_celja.SelectedValue.ToString();
+            mezok[1] = "" + Txtbx3_1_2.Text;
+            this.egybenString += Txtbx3_1_2.Text + "$";
+
+            if (Cmbbx3_1_3helye.SelectedValue != null)
+            {
+                this.egybenString += Cmbbx3_1_3helye.SelectedValue.ToString() + "$";
+                mezok[2] = Cmbbx3_1_3helye.SelectedValue.ToString();
+            }
+            else
+            {
+                mezok[2] = "";
+                this.egybenString += "$";
+            }
+
+            this.egybenString += Txtbx3_1_4.Text + "$";
+            mezok[3] = "" + Txtbx3_1_4.Text;
+
+            if (Cmbbx3_1_5szlengtipus.SelectedValue != null)
+            {
+                this.egybenString += Cmbbx3_1_5szlengtipus.SelectedValue.ToString() + "$";
+                mezok[4] = Cmbbx3_1_5szlengtipus.SelectedValue.ToString();
+            }
+            else
+            {
+                mezok[4] = "";
+                this.egybenString += "$";
+            }
+
+
+            if (Cmbbx3_1_6nyelv.SelectedValue != null)
+            {
+                this.egybenString += Cmbbx3_1_6nyelv.SelectedValue.ToString() + "$";
+                mezok[5] = Cmbbx3_1_6nyelv.SelectedValue.ToString();
+            }
+            else
+            {
+                mezok[5] = "";
+                this.egybenString += "$";
+            }
+
+            if (Cmbbx3_1_7publikacio_fajt.SelectedValue != null)
+            {
+                this.egybenString += Cmbbx3_1_7publikacio_fajt.SelectedValue.ToString() + "$";
+                mezok[6] = Cmbbx3_1_7publikacio_fajt.SelectedValue.ToString();
+            }
+            else
+            {
+                mezok[6] = "";
+                this.egybenString += "$";
+            }
+
+            if (Cmbbx3_1_8adatkozl_forma.SelectedValue != null)
+            {
+                this.egybenString += Cmbbx3_1_8adatkozl_forma.SelectedValue.ToString() + "$";
+                mezok[7] = Cmbbx3_1_8adatkozl_forma.SelectedValue.ToString();
+            }
+            else
+            {
+                mezok[7] = "";
+                this.egybenString += "$";
+            }
+
+            if (Cmbbx3_1_9publikacio_tema.SelectedValue != null)
+            {
+                this.egybenString += Cmbbx3_1_9publikacio_tema.SelectedValue.ToString() + "$";
+                mezok[8] = Cmbbx3_1_9publikacio_tema.SelectedValue.ToString();
+            }
+            else
+            {
+                mezok[8] = "";
+                this.egybenString += "$";
+            }
+
+            if (Cmbbx3_1_10publikacio_celja.SelectedValue != null)
+            {
+                this.egybenString += Cmbbx3_1_10publikacio_celja.SelectedValue.ToString() + "$";
+                mezok[9] = Cmbbx3_1_10publikacio_celja.SelectedValue.ToString();
+            }
+            else
+            {
+                mezok[9] = "";
+                this.egybenString += "$";
+            }
         }
 
         private void BtnHTMLPreview_Click(object sender, RoutedEventArgs e)
@@ -94,10 +161,8 @@ namespace UniDeb
             {
                 connection.Open();
                 cmd.Connection = connection;
-
                 cmd.CommandText = "INSERT INTO adat VALUES(NULL, @teljes_szoveg, @megjelenes_eve, @hasznalat_helye, @hasznalat_eve, @szlengtipus, @nyelv, @publikacio_tipusa, @adatkozles_formaja, @publikacio_temeja, @publikacio_celja)";
                 cmd.Prepare();
-
                 cmd.Parameters.AddWithValue("@teljes_szoveg", this.mezok[0]);
                 cmd.Parameters.AddWithValue("@megjelenes_eve", this.mezok[1]);
                 cmd.Parameters.AddWithValue("@hasznalat_helye", this.mezok[2]);

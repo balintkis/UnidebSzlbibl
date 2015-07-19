@@ -11,7 +11,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="3. Használat helye:" Width="150"  />
-                    <ComboBox Width="400" x:Name="Cmbbx3_1_3helye">
+                    <ComboBox Width="400" x:Name="Cmbbx3_1_3helye" SelectedValuePath="Content">
                         <ComboBoxItem Content="Angyalföld" />
                         <ComboBoxItem Content="Arad" />
                         <ComboBoxItem Content="Aszód" />
@@ -157,7 +157,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="5. Szlengtípus:" Width="150"  />
-                    <ComboBox Width="400" x:Name="Cmbbx3_1_5szlengtipus">
+                    <ComboBox Width="400" x:Name="Cmbbx3_1_5szlengtipus" SelectedValuePath="Content">
                         <ComboBoxItem Content="autós" />
                         <ComboBoxItem Content="barlangász" />
                         <ComboBoxItem Content="betyár" />
@@ -215,22 +215,89 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="7. Publikáció fajtája:" Width="150"  />
-                    <ComboBox x:Name="Cmbbx3_1_7publikacio_fajt" Width="400">
+                    <ComboBox x:Name="Cmbbx3_1_7publikacio_fajt" Width="400" SelectedValuePath="Content">
+                        <ComboBoxItem Content="cikk (Ld. még újságcikk)" />
+                        <ComboBoxItem Content="doktori (PhD) értekezés" />
+                        <ComboBoxItem Content="elektronikus közlemény, internetes publikáció" />
+                        <ComboBoxItem Content="glossza" />
+                        <ComboBoxItem Content="interjú (Ld. még tudósítás)" />
+                        <ComboBoxItem Content="ismertetés" />
+                        <ComboBoxItem Content="kézirat" />
+                        <ComboBoxItem Content="konferencia-összefoglaló" />
+                        <ComboBoxItem Content="könyv (Ld. még tanulmánygyűjtemény)" />
+                        <ComboBoxItem Content="PhD-értekezés" />
+                        <ComboBoxItem Content="recenzió (Ld. még ismertetés, szemle)" />
+                        <ComboBoxItem Content="szakdolgozat" />
+                        <ComboBoxItem Content="szemle (Ld. még ismertetés, recenzió)" />
+                        <ComboBoxItem Content="szépirodalom" />
+                        <ComboBoxItem Content="szócikk" />
+                        <ComboBoxItem Content="tanulmány" />
+                        <ComboBoxItem Content="tanulmánygyűjtemény (Ld. még könyv)" />
+                        <ComboBoxItem Content="tudósítás (Ld. még interjú)" />
+                        <ComboBoxItem Content="újságcikk (Ld. még cikk)" />
                     </ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="8. Az adatközlés formája:" Width="150"  />
-                    <ComboBox x:Name="Cmbbx3_1_8adatkozl_forma" Width="400">
+
+                    <ComboBox x:Name="Cmbbx3_1_8adatkozl_forma" Width="400" SelectedValuePath="Content">
+                        <ComboBoxItem Content="adatközlés" />
+                        <ComboBoxItem Content="szójegyzék" />
+                        <ComboBoxItem Content="szótár" />
                     </ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="9. Publikáció témája:" Width="150"  />
-                    <ComboBox x:Name="Cmbbx3_1_9publikacio_tema" Width="400">
+                    <ComboBox x:Name="Cmbbx3_1_9publikacio_tema" Width="400" SelectedValuePath="Content">
+                        <ComboBoxItem Content="angol eredetű" />
+                        <ComboBoxItem Content="attitűd" />
+                        <ComboBoxItem Content="birodalmi nyelv" />
+                        <ComboBoxItem Content="bizalmas (stílus, társalgás, nyelvhasználat)" />
+                        <ComboBoxItem Content="cigány eredetű" />
+                        <ComboBoxItem Content="definíció Ld. meghatározás" />
+                        <ComboBoxItem Content="diáknyelv története" />
+                        <ComboBoxItem Content="együttesek nevei" />
+                        <ComboBoxItem Content="ellenkultúra" />
+                        <ComboBoxItem Content="ellennyelv" />
+                        <ComboBoxItem Content="érdemjegy" />
+                        <ComboBoxItem Content="eredet" />
+                        <ComboBoxItem Content="eufemizmus" />
+                        <ComboBoxItem Content="farmernyelv" />
+                        <ComboBoxItem Content="felirat" />
+                        <ComboBoxItem Content="film" />
+                        <ComboBoxItem Content="firkálás" />
+                        <ComboBoxItem Content="fordítás" />
+                        <ComboBoxItem Content="francia eredetű" />
+                        <ComboBoxItem Content="frazeológia (szólások, közmondások, kifejezések)" />
+                        <ComboBoxItem Content="hangszimbolika" />
+                        <ComboBoxItem Content="héber eredetű" />
+                        <ComboBoxItem Content="idegen eredetű" />
+                        <ComboBoxItem Content="ifjúsági nyelv kialakulása" />
+                        <ComboBoxItem Content="igekötő" />
+                        <ComboBoxItem Content="játszi szóalkotás" />
+                        <ComboBoxItem Content="jiddis eredetű" />
+                        <ComboBoxItem Content="képzés" />
+                        <ComboBoxItem Content="kialakulás Ld. ifjúsági nyelv kialakulása" />
+                        <ComboBoxItem Content="könyvészet" />
+                        <ComboBoxItem Content="köszönés" />
+                        <ComboBoxItem Content="kun eredetű" />
+                        <ComboBoxItem Content="latin eredetű" />
+                        <ComboBoxItem Content="magyar eredetű" />
+                        <ComboBoxItem Content="meghatározás (a szleng fogalmának körüljárása)" />
+                        <ComboBoxItem Content="német eredetű" />
+                        <ComboBoxItem Content="rövidítés" />
+                        <ComboBoxItem Content="szóalkotás (Ld. még játszi szóalkotás, képzés)" />
+                        <ComboBoxItem Content="történet (Ld. még diáknyelv története)" />
                     </ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="10. Publikáció célja:" Width="150"  />
-                    <ComboBox x:Name="Cmbbx3_1_10publikacio_celja" Width="400">
+                    <ComboBox x:Name="Cmbbx3_1_10publikacio_celja" Width="400" SelectedValuePath="Content">
+                        <ComboBoxItem Content="anyanyelvi nevelés" />
+                        <ComboBoxItem Content="ismeretterjesztő" />
+                        <ComboBoxItem Content="nyelvművelés" />
+                        <ComboBoxItem Content="nyelvoktatás" />
+                        <ComboBoxItem Content="tudományos" />
                     </ComboBox>
                 </StackPanel>
                 <Image HorizontalAlignment="Center" Height="121" VerticalAlignment="Center" Width="264" Source="/Images/dirt.png" Margin="0,90,0,0" Opacity="0.1" />
@@ -238,7 +305,7 @@
                 <StackPanel Orientation="Vertical" Margin="15,20,5,5">
                     <Label Content="Legördülő menük bővítése:" />
                     <StackPanel Orientation="Horizontal">
-                        <ComboBox Width="200">
+                        <ComboBox Width="200" SelectedValuePath="Content">
                             <ComboBoxItem Content="3. Használat helye" />
                             <ComboBoxItem Content="4. Szlengtípus" />
                             <ComboBoxItem Content="5. Mely nyelv szlengje" />
@@ -247,14 +314,14 @@
                             <ComboBoxItem Content="9. Publikáció témája" />
                             <ComboBoxItem Content="10. Publikáció célja" />
                         </ComboBox>
-                        
+
                         <TextBox x:Name="TxtbxAddOption" Width="200" Margin="10,0,0,0"/>
                         <Button x:Name="BtnAddOption" Content="Hozzáadás" Width="100" Margin="10,0,0,0"/>
-                        
+
                     </StackPanel>
-                    
+
                 </StackPanel>
-                
+
                 <Button x:Name="BtnPreview" Content="Előnézet" Margin="15,15,15,15" Click="BtnPreview_Click"/>
                 <Button x:Name="BtnHTMLPreview" Content="HTML előnézet" Margin="15,0,15,15" Click="BtnHTMLPreview_Click"/>
                 <Button x:Name="BtnUpload" Content="Feltöltés" Margin="15,0,15,15" Click="BtnUpload_Click"/>

@@ -139,7 +139,7 @@ namespace UniDeb
                 mezok = mezok +
                     " (" + Txtbx1_1_12lapokszama.Text + " lap).";
 
-            mezok += "</span>";
+
 
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();
@@ -186,7 +186,7 @@ namespace UniDeb
 
             mezok = mezok + " (" + Txtbx1_2_11.Text + " lap).";
 
-            mezok += "</span>";
+            
 
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();
@@ -248,8 +248,6 @@ namespace UniDeb
             if (Txtbx1_3_15.Text != "")
                 mezok = mezok + " " + Txtbx1_3_15.Text + ".";
 
-            mezok += "</span>";
-
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();
         }
@@ -285,8 +283,6 @@ namespace UniDeb
             if (Txtbx1_4_9.Text == "")
                 mezok = mezok + ".";
             else mezok = mezok + ": " + Txtbx1_4_9.Text + ".";
-
-            mezok += "</span>";
 
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();
@@ -326,8 +322,6 @@ namespace UniDeb
             if (Txtbx1_5_10.Text != "")
                 mezok = mezok + ": " + Txtbx1_5_10.Text + ".";
             else mezok = mezok + ".";
-
-            mezok += "</span>";
 
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();

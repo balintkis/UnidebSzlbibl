@@ -175,7 +175,7 @@ namespace UniDeb
                 cmd.Parameters.AddWithValue("@publikacio_celja", this.mezok[9]);
 
                 cmd.ExecuteNonQuery();
-
+                this.Close();
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {

@@ -89,6 +89,8 @@ namespace UniDeb
 
             WizardPage3 wiz3 = new WizardPage3(str);
             wiz3.Show();
+
+            this.Close();
         }
     }
 }

@@ -21,11 +21,11 @@
 
             <StackPanel Orientation="Vertical">
                 <TabControl Height="599">
-                    <TabItem Header="Adat bevitel">
+                    <TabItem Header="Adatbevitel">
 
                         <Grid Margin="15,15,0,0">
                             <StackPanel>
-                                <Label Content="Adat bevitel" FontSize="25" FontWeight="Bold"/>
+                                <Label Content="Adatbevitel" FontSize="25" FontWeight="Bold"/>
                                 <Separator Margin="0,0,0,10" />
                                 <TabControl Height="512">
                                     <TabItem Header="Önálló mű">
@@ -87,12 +87,11 @@
                                                     <Label Content="Lapok száma:" Width="150" />
                                                     <TextBox x:Name="Txtbx1_1_12lapokszama" Width="400"/>
                                                 </StackPanel>
-                                                <Button x:Name="Btn_1_1_1Continue" Content="Tovább"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" Click="Btn_1_1_1Continue_Click" />
-
-
-
+                                                <Button x:Name="Btn_1_1_2Clear" Content="Törlés"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" Click="Btn_1_1_2Clear_Click" />
+                                                <Button x:Name="Btn_1_1_1Continue" Content="Tovább"  Width="75" HorizontalAlignment="Left" Margin="0,0,0,0" Click="Btn_1_1_1Continue_Click" />
 
                                             </StackPanel>
+
 
                                         </Grid>
                                     </TabItem>
@@ -101,11 +100,12 @@
 
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="12*"/>
-                                                <ColumnDefinition Width="443*"/>
+                                                <ColumnDefinition Width="106*"/>
+                                                <ColumnDefinition Width="337*"/>
                                             </Grid.ColumnDefinitions>
 
-                                            <Image HorizontalAlignment="Right" Height="547" VerticalAlignment="Bottom" Width="1464" Source="/Images/boot2.png" Margin="-554,0,0,-68.333" Opacity="0.1" Grid.ColumnSpan="2"/>
-                                            <StackPanel Grid.ColumnSpan="2" Margin="0,0,0,-0.333">
+                                            <Image HorizontalAlignment="Right" Height="547" VerticalAlignment="Bottom" Width="1464" Source="/Images/boot2.png" Margin="-554,0,0,-68.333" Opacity="0.1" Grid.ColumnSpan="3"/>
+                                            <StackPanel Grid.ColumnSpan="3" Margin="0,0,0,-0.333">
                                                 <StackPanel Orientation="Horizontal">
                                                     <Label Content="Szerkesztő:" Width="150" />
                                                     <TextBox x:Name="Txtbx1_2_1" Width="400"/>
@@ -159,7 +159,8 @@
                                                     <Label Content="Lapok száma:" Width="150" />
                                                     <TextBox x:Name="Txtbx1_2_11" Width="400"/>
                                                 </StackPanel>
-                                                <Button x:Name="Btn_1_2_1Continue" Content="Tovább"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" Click="Btn_1_2_1Continue_Click" />
+                                                <Button x:Name="Btn_1_2_2Clear" Content="Törlés"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" Click="Btn_1_2_2Clear_Click" />
+                                                <Button x:Name="Btn_1_2_1Continue" Content="Tovább"  Width="75" HorizontalAlignment="Left" Margin="0,0,0,0" Click="Btn_1_2_1Continue_Click" />
                                             </StackPanel>
                                         </Grid>
                                     </TabItem>
@@ -237,7 +238,8 @@
                                                     <Label Content="Oldalszám:" Width="150" />
                                                     <TextBox x:Name="Txtbx1_3_15" Width="400"/>
                                                 </StackPanel>
-                                                <Button x:Name="Btn_1_3_1Continue" Content="Tovább"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" Click="Btn_1_3_1Continue_Click" />
+                                                <Button x:Name="Btn_1_3_2Clear" Content="Törlés"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" Click="Btn_1_3_2Clear_Click" />
+                                                <Button x:Name="Btn_1_3_1Continue" Content="Tovább"  Width="75" HorizontalAlignment="Left" Margin="0,0,0,0" Click="Btn_1_3_1Continue_Click" />
                                             </StackPanel>
                                         </Grid>
                                     </TabItem>
@@ -281,56 +283,58 @@
                                                     <Label Content="Oldalszám:" Width="150" />
                                                     <TextBox x:Name="Txtbx1_4_9" Width="400"/>
                                                 </StackPanel>
-                                                <Button x:Name="Btn_1_4_1Continue" Content="Tovább"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" Click="Btn_1_4_1Continue_Click" />
+                                                <Button x:Name="Btn_1_4_2Clear" Content="Törlés"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" Click="Btn_1_4_2Clear_Click" />
+                                                <Button x:Name="Btn_1_4_1Continue" Content="Tovább"  Width="75" HorizontalAlignment="Left" Margin="0,0,0,0" Click="Btn_1_4_1Continue_Click" />
                                             </StackPanel>
                                         </Grid>
                                     </TabItem>
                                     <TabItem Header="Cikk újságban">
                                         <Grid>
                                             <Image HorizontalAlignment="Right" Height="547" VerticalAlignment="Bottom" Width="1464" Source="/Images/boot2.png" Margin="-554,0,0,-68.333" Opacity="0.1"/>
-                                        <StackPanel>
-                                            <StackPanel Orientation="Horizontal">
-                                                <Label Content="Szerző:" Width="150" />
-                                                <TextBox x:Name="Txtbx1_5_1" Width="400"/>
+                                            <StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Szerző:" Width="150" />
+                                                    <TextBox x:Name="Txtbx1_5_1" Width="400"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Kiadás éve:" Width="150" />
+                                                    <TextBox x:Name="Txtbx1_5_2" Width="400"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Cím:" Width="150" />
+                                                    <TextBox x:Name="Txtbx1_5_3" Width="400"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Párhuzamos cím:" Width="150" />
+                                                    <TextBox x:Name="Txtbx1_5_4" Width="400"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Alcím:" Width="150" />
+                                                    <TextBox x:Name="Txtbx1_5_5" Width="400"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Újságcím:" Width="150" />
+                                                    <TextBox x:Name="Txtbx1_5_6" Width="400"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Évfolyam:" Width="150" />
+                                                    <TextBox x:Name="Txtbx1_5_7" Width="400"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Lapszám:" Width="150" />
+                                                    <TextBox x:Name="Txtbx1_5_8" Width="400"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Dátum:" Width="150" />
+                                                    <TextBox x:Name="Txtbx1_5_9" Width="400"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Oldalszám:" Width="150" />
+                                                    <TextBox x:Name="Txtbx1_5_10" Width="400"/>
+                                                </StackPanel>
+                                                <Button x:Name="Btn_1_5_2Clear" Content="Törlés"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" Click="Btn_1_5_2Continue_Click" />
+                                                <Button x:Name="Btn_1_5_1Continue" Content="Tovább"  Width="75" HorizontalAlignment="Left" Margin="0,00,0,0" Click="Btn_1_5_1Continue_Click" />
                                             </StackPanel>
-                                            <StackPanel Orientation="Horizontal">
-                                                <Label Content="Kiadás éve:" Width="150" />
-                                                <TextBox x:Name="Txtbx1_5_2" Width="400"/>
-                                            </StackPanel>
-                                            <StackPanel Orientation="Horizontal">
-                                                <Label Content="Cím:" Width="150" />
-                                                <TextBox x:Name="Txtbx1_5_3" Width="400"/>
-                                            </StackPanel>
-                                            <StackPanel Orientation="Horizontal">
-                                                <Label Content="Párhuzamos cím:" Width="150" />
-                                                <TextBox x:Name="Txtbx1_5_4" Width="400"/>
-                                            </StackPanel>
-                                            <StackPanel Orientation="Horizontal">
-                                                <Label Content="Alcím:" Width="150" />
-                                                <TextBox x:Name="Txtbx1_5_5" Width="400"/>
-                                            </StackPanel>
-                                            <StackPanel Orientation="Horizontal">
-                                                <Label Content="Újságcím:" Width="150" />
-                                                <TextBox x:Name="Txtbx1_5_6" Width="400"/>
-                                            </StackPanel>
-                                            <StackPanel Orientation="Horizontal">
-                                                <Label Content="Évfolyam:" Width="150" />
-                                                <TextBox x:Name="Txtbx1_5_7" Width="400"/>
-                                            </StackPanel>
-                                            <StackPanel Orientation="Horizontal">
-                                                <Label Content="Lapszám:" Width="150" />
-                                                <TextBox x:Name="Txtbx1_5_8" Width="400"/>
-                                            </StackPanel>
-                                            <StackPanel Orientation="Horizontal">
-                                                <Label Content="Dátum:" Width="150" />
-                                                <TextBox x:Name="Txtbx1_5_9" Width="400"/>
-                                            </StackPanel>
-                                            <StackPanel Orientation="Horizontal">
-                                                <Label Content="Oldalszám:" Width="150" />
-                                                <TextBox x:Name="Txtbx1_5_10" Width="400"/>
-                                            </StackPanel>
-                                            <Button x:Name="Btn_1_5_1Continue" Content="Tovább"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" Click="Btn_1_5_1Continue_Click" />
-                                        </StackPanel>
 
                                         </Grid>
                                     </TabItem>

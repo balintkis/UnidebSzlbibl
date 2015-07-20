@@ -423,6 +423,89 @@ namespace UniDeb
             
         }
 
+        private void Btn_1_1_2Clear_Click(object sender, RoutedEventArgs e)
+        {
+            this.Txtbx1_1_1szerzo.Text = "";
+            this.Txtbx1_1_2kiadaseve.Text = "";
+            this.Txtbx1_1_3konyvcim.Text = "";
+            this.Txtbx1_1_4parhuzamoscim.Text = "";
+            this.Txtbx1_1_5alcim.Text = "";
+            this.Txtbx1_1_6kotetszam.Text = "";
+            this.Txtbx1_1_7kiadasszam.Text = "";
+            this.Txtbx1_1_8sorozat.Text = "";
+            this.Cmbbx1_1_9mujelleg.SelectedItem = null;
+            this.Txtbx1_1_10kiadashelye.Text = "";
+            this.Txtbx1_1_11kiado.Text = "";
+            this.Txtbx1_1_12lapokszama.Text = "";
+        }
+
+        private void Btn_1_2_2Clear_Click(object sender, RoutedEventArgs e)
+        {
+            this.Txtbx1_2_1.Text = "";
+            this.Txtbx1_2_2.Text = "";
+            this.Txtbx1_2_3.Text = "";
+            this.Txtbx1_2_4.Text = "";
+            this.Txtbx1_2_5.Text = "";
+            this.Txtbx1_2_6.Text = "";
+            this.Txtbx1_2_7.Text = "";
+            this.Txtbx1_2_8.Text = "";
+            this.Txtbx1_2_9.Text = "";
+            this.Txtbx1_2_10.Text = "";
+            this.Txtbx1_2_11.Text = "";
+            this.Cmbbx1_2_1.SelectedItem = null;
+
+        }
+
+        private void Btn_1_3_2Clear_Click(object sender, RoutedEventArgs e)
+        {
+            this.Txtbx1_3_1.Text = "";
+            this.Txtbx1_3_2.Text = "";
+            this.Txtbx1_3_3.Text = "";
+            this.Txtbx1_3_4.Text = "";
+            this.Txtbx1_3_5.Text = "";
+            this.Txtbx1_3_6.Text = "";
+            this.Txtbx1_3_7.Text = "";
+            this.Txtbx1_3_8.Text = "";
+            this.Txtbx1_3_9.Text = "";
+            this.Txtbx1_3_10.Text = "";
+            this.Txtbx1_3_11.Text = "";
+            this.Txtbx1_3_12.Text = "";
+            this.Txtbx1_3_13.Text = "";
+            this.Txtbx1_3_14.Text = "";
+            this.Txtbx1_3_15.Text = "";
+            this.Cmbbx1_3_1.SelectedItem = null;
+
+        }
+
+        private void Btn_1_4_2Clear_Click(object sender, RoutedEventArgs e)
+        {
+            this.Txtbx1_4_1.Text = "";
+            this.Txtbx1_4_2.Text = "";
+            this.Txtbx1_4_3.Text = "";
+            this.Txtbx1_4_4.Text = "";
+            this.Txtbx1_4_5.Text = "";
+            this.Txtbx1_4_6.Text = "";
+            this.Txtbx1_4_7.Text = "";
+            this.Txtbx1_4_8.Text = "";
+            this.Txtbx1_4_9.Text = "";
+        }
+
+        private void Btn_1_5_2Clear_Click(object sender, RoutedEventArgs e)
+        {
+            this.Txtbx1_5_1.Text = "";
+            this.Txtbx1_5_2.Text = "";
+            this.Txtbx1_5_3.Text = "";
+            this.Txtbx1_5_4.Text = "";
+            this.Txtbx1_5_5.Text = "";
+            this.Txtbx1_5_6.Text = "";
+            this.Txtbx1_5_7.Text = "";
+            this.Txtbx1_5_8.Text = "";
+            this.Txtbx1_5_9.Text = "";
+            this.Txtbx1_5_10.Text = "";
+        }
+
+ 
+
 
     }
 

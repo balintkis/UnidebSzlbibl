@@ -332,7 +332,7 @@
                                                     <Label Content="Oldalszám:" Width="150" />
                                                     <TextBox x:Name="Txtbx1_5_10" Width="400"/>
                                                 </StackPanel>
-                                                <Button x:Name="Btn_1_5_2Clear" Content="Törlés"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" Click="Btn_1_5_2Continue_Click" />
+                                                <Button x:Name="Btn_1_5_2Clear" Content="Törlés"  Width="75" HorizontalAlignment="Left" Margin="0,30,0,0" Click="Btn_1_5_2Clear_Click" />
                                                 <Button x:Name="Btn_1_5_1Continue" Content="Tovább"  Width="75" HorizontalAlignment="Left" Margin="0,00,0,0" Click="Btn_1_5_1Continue_Click" />
                                             </StackPanel>
 
@@ -362,7 +362,7 @@
                                 <Label Content="Módosítás / Törlés" FontSize="25" FontWeight="Bold"/>
                                 <Separator Margin="0,0,0,10" />
                                 <StackPanel Orientation="Horizontal">
-                                    <DataGrid  Height="470" Width="800" AutoGenerateColumns="True" CanUserResizeColumns="True" CanUserReorderColumns="True" x:Name="DgrReadWrite" ItemsSource="{Binding ''}"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" />
+                                    <DataGrid  Height="470" Width="800" AutoGenerateColumns="True" CanUserResizeColumns="True" CanUserReorderColumns="True" x:Name="DgrReadWrite" ItemsSource="{Binding Path=., Mode=TwoWay}"  HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" CellEditEnding="DgrReadWrite_CellEditEnding" CurrentCellChanged="DgrReadWrite_CurrentCellChanged"/>
                                     <StackPanel VerticalAlignment="Bottom">
                                         <Button x:Name="BtnDisplay2" Content="Beolvasás / Frissítás" Width="105" Height="25" Margin="10,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="BtnDisplay2_Click" />
                                         <Button x:Name="BtnDelete" Content="Törlés" Width="105" Height="25" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="BtnDelete_Click" />

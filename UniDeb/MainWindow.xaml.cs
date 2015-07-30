@@ -32,6 +32,7 @@ namespace UniDeb
         {
             InitializeComponent();
             service = Service.getInstance();
+            AddHotKeys();
         }
 
 
@@ -63,7 +64,7 @@ namespace UniDeb
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
                 MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-               // MessageBox.Show("MySQL kapcsolódási hiba!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
+                // MessageBox.Show("MySQL kapcsolódási hiba!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -77,7 +78,8 @@ namespace UniDeb
             LoadRefreshDgrReadWrite();
         }
 
-        private void LoadRefreshDgrReadWrite() {
+        private void LoadRefreshDgrReadWrite()
+        {
             string connStr = this.service.ConnectionString;
 
             string sql = "SELECT * FROM adat";
@@ -107,7 +109,7 @@ namespace UniDeb
                 mezok = mezok + "<strong>" + Txtbx1_1_1szerzo.Text + "</strong>";
 
             if (Txtbx1_1_2kiadaseve.Text != "")
-                mezok = mezok + " (" + Txtbx1_1_2kiadaseve.Text + "):";
+                mezok = mezok + " " + Txtbx1_1_2kiadaseve.Text + ".";
 
             if (Txtbx1_1_3konyvcim.Text != "")
                 mezok = mezok + "<em> " + Txtbx1_1_3konyvcim.Text + "." + "</em>";
@@ -116,16 +118,16 @@ namespace UniDeb
                 mezok = mezok + "<em> " + Txtbx1_1_4parhuzamoscim.Text + "." + "</em>";
 
             if (Txtbx1_1_5alcim.Text != "")
-                mezok = mezok + "<em> (" + Txtbx1_1_5alcim.Text + ".)" + "</em>";
+                mezok = mezok + "<em> (" + Txtbx1_1_5alcim.Text + ")." + "</em>";
 
             if (Txtbx1_1_6kotetszam.Text != "")
-                mezok = mezok + " " + Txtbx1_1_6kotetszam.Text + ".";
+                mezok = mezok + " <em>" + Txtbx1_1_6kotetszam.Text + ".</em>";
 
             if (Txtbx1_1_7kiadasszam.Text != "")
                 mezok = mezok + " " + Txtbx1_1_7kiadasszam.Text + ".";
 
             if (Txtbx1_1_8sorozat.Text != "")
-                mezok = mezok + " (" + Txtbx1_1_8sorozat.Text + ")";
+                mezok = mezok + " (" + Txtbx1_1_8sorozat.Text + ").";
 
             if (Cmbbx1_1_9mujelleg.SelectedItem != null)
                 mezok = mezok +
@@ -143,7 +145,7 @@ namespace UniDeb
                     " (" + Txtbx1_1_12lapokszama.Text + " lap).";
 
 
-
+            mezok += "</span>";
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();
         }
@@ -156,7 +158,7 @@ namespace UniDeb
                 mezok = mezok + "<strong>" + Txtbx1_2_1.Text + "</strong>" + " szerk.";
 
             if (Txtbx1_2_2.Text != "")
-                mezok = mezok + " (" + Txtbx1_2_2.Text + "): ";
+                mezok = mezok + " " + Txtbx1_2_2.Text + ". ";
 
             if (Txtbx1_2_3.Text != "")
                 mezok = mezok + "<em> " + Txtbx1_2_3.Text + ".</em>";
@@ -165,16 +167,16 @@ namespace UniDeb
                 mezok = mezok + "<em> " + Txtbx1_2_4.Text + ".</em>";
 
             if (Txtbx1_2_5.Text != "")
-                mezok = mezok + "<em> (" + Txtbx1_2_5.Text + ".)</em>";
+                mezok = mezok + "<em> (" + Txtbx1_2_5.Text + ").</em>";
 
             if (Txtbx1_2_6.Text != "")
-                mezok = mezok + " " + Txtbx1_2_6.Text + ".";
+                mezok = mezok + " <em>" + Txtbx1_2_6.Text + ".</em>";
 
             if (Txtbx1_2_7.Text != "")
                 mezok = mezok + " " + Txtbx1_2_7.Text + ".";
 
             if (Txtbx1_2_8.Text != "")
-                mezok = mezok + " (" + Txtbx1_2_8.Text + ")";
+                mezok = mezok + " (" + Txtbx1_2_8.Text + ").";
 
             if (Cmbbx1_2_1.SelectedItem != null)
                 mezok = mezok +
@@ -189,8 +191,8 @@ namespace UniDeb
 
             mezok = mezok + " (" + Txtbx1_2_11.Text + " lap).";
 
-            
 
+            mezok += "</span>";
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();
         }
@@ -204,16 +206,16 @@ namespace UniDeb
                 mezok = mezok + "<strong>" + Txtbx1_3_1.Text + "</strong>";
 
             if (Txtbx1_3_2.Text != "")
-                mezok = mezok + " (" + Txtbx1_3_2.Text + "):";
+                mezok = mezok + " " + Txtbx1_3_2.Text + ".";
 
             if (Txtbx1_3_3.Text != "")
                 mezok = mezok + " " + Txtbx1_3_3.Text + ". ";
 
             if (Txtbx1_3_4.Text != "")
-                mezok = mezok + "<em> " + Txtbx1_3_4.Text + "." + "</em>";
+                mezok = mezok + " " + Txtbx1_3_4.Text + "." + "";
 
             if (Txtbx1_3_5.Text != "")
-                mezok = mezok + "<em> (" + Txtbx1_3_5.Text + ".)</em>";
+                mezok = mezok + " (" + Txtbx1_3_5.Text + ").";
 
             if (Txtbx1_3_6.Text != "")
                 mezok = mezok + " In: <strong>" + Txtbx1_3_6.Text + "</strong> szerk.:";
@@ -225,16 +227,16 @@ namespace UniDeb
                 mezok = mezok + "<em> " + Txtbx1_3_8.Text + ".</em>";
 
             if (Txtbx1_3_9.Text != "")
-                mezok = mezok + "<em> (" + Txtbx1_3_9.Text + ".)</em>";
+                mezok = mezok + "<em> (" + Txtbx1_3_9.Text + ").</em>";
 
             if (Txtbx1_3_10.Text != "")
-                mezok = mezok + " " + Txtbx1_3_10.Text + ".";
+                mezok = mezok + "<em> " + Txtbx1_3_10.Text + ".</em>";
 
             if (Txtbx1_3_11.Text != "")
                 mezok = mezok + " " + Txtbx1_3_11.Text + ".";
 
             if (Txtbx1_3_12.Text != "")
-                mezok = mezok + " (" + Txtbx1_3_12.Text + ")";
+                mezok = mezok + " (" + Txtbx1_3_12.Text + ").";
 
             if (Cmbbx1_3_1.SelectedItem != null)
                 mezok = mezok +
@@ -251,6 +253,7 @@ namespace UniDeb
             if (Txtbx1_3_15.Text != "")
                 mezok = mezok + " " + Txtbx1_3_15.Text + ".";
 
+            mezok += "</span>";
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();
         }
@@ -263,7 +266,7 @@ namespace UniDeb
                 mezok = mezok + "<strong>" + Txtbx1_4_1.Text + "</strong>";
 
             if (Txtbx1_4_2.Text != "")
-                mezok = mezok + " (" + Txtbx1_4_2.Text + "):";
+                mezok = mezok + " " + Txtbx1_4_2.Text + ".";
 
             if (Txtbx1_4_3.Text != "")
                 mezok = mezok + " " + Txtbx1_4_3.Text + ". ";
@@ -272,7 +275,7 @@ namespace UniDeb
                 mezok = mezok + " " + Txtbx1_4_4.Text + ".";
 
             if (Txtbx1_4_5.Text != "")
-                mezok = mezok + " (" + Txtbx1_4_5.Text + ".)";
+                mezok = mezok + " (" + Txtbx1_4_5.Text + ").";
 
             if (Txtbx1_4_6.Text != "")
                 mezok = mezok + "<em> " + Txtbx1_4_6.Text + "</em>";
@@ -281,12 +284,14 @@ namespace UniDeb
                 mezok = mezok + "<em> " + Txtbx1_4_7.Text + "</em>";
 
             if (Txtbx1_4_8.Text != "")
-                mezok = mezok + "<em> /" + Txtbx1_4_8.Text + "</em>";
+                mezok = mezok + "<em>/" + Txtbx1_4_8.Text + "";
+            else mezok += "<em>";
 
             if (Txtbx1_4_9.Text == "")
-                mezok = mezok + ".";
-            else mezok = mezok + ": " + Txtbx1_4_9.Text + ".";
+                mezok = mezok + ".</em>";
+            else mezok = mezok + ":</em> " + Txtbx1_4_9.Text + ".";
 
+            mezok += "</span>";
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();
 
@@ -299,7 +304,7 @@ namespace UniDeb
                 mezok = "<strong>" + Txtbx1_5_1.Text + "</strong>";
 
             if (Txtbx1_5_2.Text != "")
-                mezok = mezok + " (" + Txtbx1_5_2.Text + "):";
+                mezok = mezok + " " + Txtbx1_5_2.Text + ".";
 
             if (Txtbx1_5_3.Text != "")
                 mezok = mezok + " " + Txtbx1_5_3.Text + ".";
@@ -308,7 +313,7 @@ namespace UniDeb
                 mezok = mezok + " " + Txtbx1_5_4.Text + ".";
 
             if (Txtbx1_5_5.Text != "")
-                mezok = mezok + " (" + Txtbx1_5_5.Text + ".)";
+                mezok = mezok + " (" + Txtbx1_5_5.Text + ").";
 
             if (Txtbx1_5_6.Text != "")
                 mezok = mezok + "<em> " + Txtbx1_5_6.Text + "</em>";
@@ -326,6 +331,7 @@ namespace UniDeb
                 mezok = mezok + ": " + Txtbx1_5_10.Text + ".";
             else mezok = mezok + ".";
 
+            mezok += "</span>";
             WizardPage2 wiz2 = new WizardPage2(mezok);
             wiz2.Show();
         }
@@ -424,7 +430,7 @@ namespace UniDeb
                 MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             LoadRefreshDgrReadWrite();
-            
+
         }
 
         private void Btn_1_1_2Clear_Click(object sender, RoutedEventArgs e)
@@ -515,7 +521,8 @@ namespace UniDeb
 
 
 
-        private void DgrReadWrite_UpdateMySQL() {
+        private void DgrReadWrite_UpdateMySQL()
+        {
             String connStr = this.service.ConnectionString;
             MySqlConnection connection = new MySqlConnection(connStr);
             MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand();
@@ -553,15 +560,128 @@ namespace UniDeb
 
         private void DgrReadWrite_CurrentCellChanged(object sender, EventArgs e)
         {
-            if (this.needUpdate){
+            if (this.needUpdate)
+            {
                 this.needUpdate = false;
                 DgrReadWrite_UpdateMySQL();
             }
         }
 
-      
+        private void AddHotKeys()
+        {
+            try
+            {
+                RoutedCommand firstSettings = new RoutedCommand();
+                firstSettings.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Alt));
+                CommandBindings.Add(new CommandBinding(firstSettings, PasteItalic));
 
-      
+                RoutedCommand secondSettings = new RoutedCommand();
+                secondSettings.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Control));
+                CommandBindings.Add(new CommandBinding(secondSettings, ChangeToItalic));
+
+                RoutedCommand thirdSettings = new RoutedCommand();
+                thirdSettings.InputGestures.Add(new KeyGesture(Key.B, ModifierKeys.Alt));
+                CommandBindings.Add(new CommandBinding(thirdSettings, PasteBold));
+
+                RoutedCommand fourthSettings = new RoutedCommand();
+                fourthSettings.InputGestures.Add(new KeyGesture(Key.B, ModifierKeys.Control));
+                CommandBindings.Add(new CommandBinding(fourthSettings, ChangeToBold));
+
+                RoutedCommand fifthSettings = new RoutedCommand();
+                fifthSettings.InputGestures.Add(new KeyGesture(Key.Subtract, ModifierKeys.Control | ModifierKeys.Alt));
+                CommandBindings.Add(new CommandBinding(fifthSettings, PasteLongDash));
+
+                RoutedCommand sixthSettings = new RoutedCommand();
+                sixthSettings.InputGestures.Add(new KeyGesture(Key.Subtract, ModifierKeys.Control));
+                CommandBindings.Add(new CommandBinding(sixthSettings, PasteMediumDash));
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Hiba a gyorsbillentyű beállításoknál: " + err.Message.ToString());
+            }
+        }
+
+        private void PasteLongDash(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                int i = currentTextBox.CaretIndex;
+                currentTextBox.Text = currentTextBox.Text.Insert(currentTextBox.CaretIndex, "—");
+                currentTextBox.CaretIndex = i + 1;
+            }
+        }
+
+        private void PasteMediumDash(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                int i = currentTextBox.CaretIndex;
+                currentTextBox.Text = currentTextBox.Text.Insert(currentTextBox.CaretIndex, "–");
+                currentTextBox.CaretIndex = i+1;
+            }
+        }
+
+
+        private void PasteItalic(object sender, RoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                int i = currentTextBox.CaretIndex;
+                String ins1 = "<em>";
+                String ins2 = "</em>";
+                currentTextBox.Text = currentTextBox.Text.Insert(currentTextBox.CaretIndex, ins1+ins2);
+                currentTextBox.CaretIndex = i + ins1.Length;
+            }
+        }
+
+        private void PasteBold(object sender, RoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                int i = currentTextBox.CaretIndex;
+                String ins1 = "<strong>";
+                String ins2 = "</strong>";
+                currentTextBox.Text = currentTextBox.Text.Insert(currentTextBox.CaretIndex, ins1+ins2);
+                currentTextBox.CaretIndex = i + ins1.Length;
+
+                
+            }
+        }
+
+        private void ChangeToItalic(object sender, RoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                currentTextBox.SelectedText = "<em>" + currentTextBox.SelectedText + "</em>";
+            }
+        }
+
+        private void ChangeToBold(object sender, RoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                currentTextBox.SelectedText = "<strong>" + currentTextBox.SelectedText + "</strong>";
+            }
+        }
+
+        private void MenuItemHotkey_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Ctrl + I: Kiválasztott szöveg dőlté" + Environment.NewLine +
+                            "Alt + I : Dőlt címkék beszúrása" + Environment.NewLine +
+                            Environment.NewLine +
+                            "Ctrl + B: Kiválasztott szöveg félkövérré" + Environment.NewLine +
+                            "Alt + B : Félkövér címkék beszúrása" + Environment.NewLine +
+                            Environment.NewLine +
+                            "Ctrl + Alt + '-' : —" + Environment.NewLine +
+                            "Ctrl + '-'          : –");
+        }
+
 
     }
 

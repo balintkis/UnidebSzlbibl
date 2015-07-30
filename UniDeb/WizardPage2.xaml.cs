@@ -21,11 +21,13 @@ namespace UniDeb
     {
 
         private String initString;
-
+        private Service service;
         public WizardPage2(String initString)
         {
             InitializeComponent();
             this.initString = initString;
+            this.service = Service.getInstance();
+            AddHotKeys();
         }
 
         private void Btn_1_5_1Continue_Click(object sender, RoutedEventArgs e)
@@ -45,7 +47,7 @@ namespace UniDeb
                 str = str + "<em>Rezümé: </em>" + Txtbx2_1_4.Text + "<br />";
 
             if (Txtbx2_1_5.Text != "")
-                str = str + @"<em>URL: </em><a href=""" + Txtbx2_1_5.Text + @""">" + Txtbx2_1_5.Text + "</a>";
+                str = str + @"<em>URL: </em><a href=""" + Txtbx2_1_5.Text + @""">" + Txtbx2_1_5.Text + "</a>" + "<br />";
 
             if (Txtbx2_1_6.Text != "")
                 str = str + "<em>Közzéteszi: </em>" + Txtbx2_1_6.Text + "<br />";
@@ -91,6 +93,109 @@ namespace UniDeb
             wiz3.Show();
 
             this.Close();
+        }
+
+        private void AddHotKeys()
+        {
+            try
+            {
+                RoutedCommand firstSettings = new RoutedCommand();
+                firstSettings.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Alt));
+                CommandBindings.Add(new CommandBinding(firstSettings, PasteItalic));
+
+                RoutedCommand secondSettings = new RoutedCommand();
+                secondSettings.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Control));
+                CommandBindings.Add(new CommandBinding(secondSettings, ChangeToItalic));
+
+                RoutedCommand thirdSettings = new RoutedCommand();
+                thirdSettings.InputGestures.Add(new KeyGesture(Key.B, ModifierKeys.Alt));
+                CommandBindings.Add(new CommandBinding(thirdSettings, PasteBold));
+
+                RoutedCommand fourthSettings = new RoutedCommand();
+                fourthSettings.InputGestures.Add(new KeyGesture(Key.B, ModifierKeys.Control));
+                CommandBindings.Add(new CommandBinding(fourthSettings, ChangeToBold));
+
+                RoutedCommand fifthSettings = new RoutedCommand();
+                fifthSettings.InputGestures.Add(new KeyGesture(Key.Subtract, ModifierKeys.Control | ModifierKeys.Alt));
+                CommandBindings.Add(new CommandBinding(fifthSettings, PasteLongDash));
+
+                RoutedCommand sixthSettings = new RoutedCommand();
+                sixthSettings.InputGestures.Add(new KeyGesture(Key.Subtract, ModifierKeys.Control));
+                CommandBindings.Add(new CommandBinding(sixthSettings, PasteMediumDash));
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Hiba a gyorsbillentyű beállításoknál: " + err.Message.ToString());
+            }
+        }
+
+        private void PasteLongDash(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                int i = currentTextBox.CaretIndex;
+                currentTextBox.Text = currentTextBox.Text.Insert(currentTextBox.CaretIndex, "—");
+                currentTextBox.CaretIndex = i + 1;
+            }
+        }
+
+        private void PasteMediumDash(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                int i = currentTextBox.CaretIndex;
+                currentTextBox.Text = currentTextBox.Text.Insert(currentTextBox.CaretIndex, "–");
+                currentTextBox.CaretIndex = i + 1;
+            }
+        }
+
+
+        private void PasteItalic(object sender, RoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                int i = currentTextBox.CaretIndex;
+                String ins1 = "<em>";
+                String ins2 = "</em>";
+                currentTextBox.Text = currentTextBox.Text.Insert(currentTextBox.CaretIndex, ins1 + ins2);
+                currentTextBox.CaretIndex = i + ins1.Length;
+            }
+        }
+
+        private void PasteBold(object sender, RoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                int i = currentTextBox.CaretIndex;
+                String ins1 = "<strong>";
+                String ins2 = "</strong>";
+                currentTextBox.Text = currentTextBox.Text.Insert(currentTextBox.CaretIndex, ins1 + ins2);
+                currentTextBox.CaretIndex = i + ins1.Length;
+
+
+            }
+        }
+
+        private void ChangeToItalic(object sender, RoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                currentTextBox.SelectedText = "<em>" + currentTextBox.SelectedText + "</em>";
+            }
+        }
+
+        private void ChangeToBold(object sender, RoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                currentTextBox.SelectedText = "<strong>" + currentTextBox.SelectedText + "</strong>";
+            }
         }
     }
 }

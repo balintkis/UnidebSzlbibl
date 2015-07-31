@@ -43,7 +43,7 @@ namespace UniDeb
 
         private void MenuItemAbout_Click(object sender, RoutedEventArgs e)
         {
-            new About(this).Show();
+            this.service.About(sender, e);
         }
 
         private void BtnDisplay_Click(object sender, RoutedEventArgs e)
@@ -70,7 +70,7 @@ namespace UniDeb
 
         private void MenuItemWeb_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("http://web.unideb.hu/~tkis/keres/index.php");
+            this.service.Web(sender, e);
         }
 
         private void BtnDisplay2_Click(object sender, RoutedEventArgs e)
@@ -391,8 +391,7 @@ namespace UniDeb
 
         private void MenuItemMySql_Click(object sender, RoutedEventArgs e)
         {
-            Login login = new Login();
-            login.Show();
+            this.service.Login(sender, e);
         }
 
         private void BtnCopy_Click(object sender, RoutedEventArgs e)
@@ -533,9 +532,6 @@ namespace UniDeb
                 connection.Open();
                 cmd.Connection = connection;
 
-
-                MessageBox.Show("A(z) " + rowview.Row["index"].ToString() + "-os indexű rekord frissítve!");
-
                 cmd.CommandText = "UPDATE `adat` SET `teljes_szoveg`=@teljes_szoveg,`megjelenes_eve`=@megjelenes_eve,`hasznalat_helye`=@hasznalat_helye,`hasznalat_eve`=@hasznalat_eve,`szlengtipus`=@szlengtipus,`nyelv`=@nyelv,`publikacio_tipusa`= @publikacio_tipusa,`adatkozles_formaja`=@adatkozles_formaja,`publikacio_temeja`=@publikacio_temeja,`publikacio_celja`= @publikacio_celja WHERE `index` =" + rowview.Row["index"].ToString();
                 cmd.Prepare();
 
@@ -550,11 +546,11 @@ namespace UniDeb
                 cmd.Parameters.AddWithValue("@publikacio_temeja", rowview.Row["publikacio_temeja"].ToString());
                 cmd.Parameters.AddWithValue("@publikacio_celja", rowview.Row["publikacio_celja"].ToString());
                 cmd.ExecuteNonQuery();
-
+                MessageBox.Show("A(z) " + rowview.Row["index"].ToString() + "-os indexű rekord frissítve!");
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
-                MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Hiba " + ex.Number + ": " + ex.Message, "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -618,6 +614,22 @@ namespace UniDeb
                 RoutedCommand twelthSettings = new RoutedCommand();
                 twelthSettings.InputGestures.Add(new KeyGesture(Key.L, ModifierKeys.Alt));
                 CommandBindings.Add(new CommandBinding(twelthSettings, PasteSub));
+
+                RoutedCommand thirteenthSettings = new RoutedCommand();
+                thirteenthSettings.InputGestures.Add(new KeyGesture(Key.F1));
+                CommandBindings.Add(new CommandBinding(thirteenthSettings, this.service.Hotkeys));
+                
+                RoutedCommand fourteenthSettings = new RoutedCommand();
+                fourteenthSettings.InputGestures.Add(new KeyGesture(Key.F2));
+                CommandBindings.Add(new CommandBinding(fourteenthSettings, this.service.Login));
+
+                RoutedCommand fifteenthSettings = new RoutedCommand();
+                fifteenthSettings.InputGestures.Add(new KeyGesture(Key.F3));
+                CommandBindings.Add(new CommandBinding(fifteenthSettings, this.service.About));
+
+                RoutedCommand sixteenthSettings = new RoutedCommand();
+                sixteenthSettings.InputGestures.Add(new KeyGesture(Key.F5));
+                CommandBindings.Add(new CommandBinding(sixteenthSettings, this.service.Web));
             }
             catch (Exception err)
             {
@@ -760,14 +772,7 @@ namespace UniDeb
 
         private void MenuItemHotkey_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Ctrl + I: Kiválasztott szöveg dőlté" + Environment.NewLine +
-                            "Alt + I : Dőlt címkék beszúrása" + Environment.NewLine +
-                            Environment.NewLine +
-                            "Ctrl + B: Kiválasztott szöveg félkövérré" + Environment.NewLine +
-                            "Alt + B : Félkövér címkék beszúrása" + Environment.NewLine +
-                            Environment.NewLine +
-                            "Ctrl + Alt + '-' : —" + Environment.NewLine +
-                            "Ctrl + '-'          : –");
+            this.service.Hotkeys(sender, e);
         }
 
 

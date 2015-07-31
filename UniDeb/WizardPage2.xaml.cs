@@ -122,6 +122,46 @@ namespace UniDeb
                 RoutedCommand sixthSettings = new RoutedCommand();
                 sixthSettings.InputGestures.Add(new KeyGesture(Key.Subtract, ModifierKeys.Control));
                 CommandBindings.Add(new CommandBinding(sixthSettings, PasteMediumDash));
+
+                RoutedCommand seventhSettings = new RoutedCommand();
+                seventhSettings.InputGestures.Add(new KeyGesture(Key.U, ModifierKeys.Control));
+                CommandBindings.Add(new CommandBinding(seventhSettings, ChangeToUnderlined));
+
+                RoutedCommand eigthSettings = new RoutedCommand();
+                eigthSettings.InputGestures.Add(new KeyGesture(Key.U, ModifierKeys.Alt));
+                CommandBindings.Add(new CommandBinding(eigthSettings, PasteUnderlined));
+
+                RoutedCommand ninethSettings = new RoutedCommand();
+                ninethSettings.InputGestures.Add(new KeyGesture(Key.P, ModifierKeys.Control));
+                CommandBindings.Add(new CommandBinding(ninethSettings, ChangeToSup));
+
+                RoutedCommand tenthSettings = new RoutedCommand();
+                tenthSettings.InputGestures.Add(new KeyGesture(Key.P, ModifierKeys.Alt));
+                CommandBindings.Add(new CommandBinding(tenthSettings, PasteSup));
+
+                RoutedCommand eleventhSettings = new RoutedCommand();
+                eleventhSettings.InputGestures.Add(new KeyGesture(Key.L, ModifierKeys.Control));
+                CommandBindings.Add(new CommandBinding(eleventhSettings, ChangeToSub));
+
+                RoutedCommand twelthSettings = new RoutedCommand();
+                twelthSettings.InputGestures.Add(new KeyGesture(Key.L, ModifierKeys.Alt));
+                CommandBindings.Add(new CommandBinding(twelthSettings, PasteSub));
+
+                RoutedCommand thirteenthSettings = new RoutedCommand();
+                thirteenthSettings.InputGestures.Add(new KeyGesture(Key.F1));
+                CommandBindings.Add(new CommandBinding(thirteenthSettings, this.service.Hotkeys));
+
+                RoutedCommand fourteenthSettings = new RoutedCommand();
+                fourteenthSettings.InputGestures.Add(new KeyGesture(Key.F2));
+                CommandBindings.Add(new CommandBinding(fourteenthSettings, this.service.Login));
+
+                RoutedCommand fifteenthSettings = new RoutedCommand();
+                fifteenthSettings.InputGestures.Add(new KeyGesture(Key.F3));
+                CommandBindings.Add(new CommandBinding(fifteenthSettings, this.service.About));
+
+                RoutedCommand sixteenthSettings = new RoutedCommand();
+                sixteenthSettings.InputGestures.Add(new KeyGesture(Key.F5));
+                CommandBindings.Add(new CommandBinding(sixteenthSettings, this.service.Web));
             }
             catch (Exception err)
             {
@@ -175,8 +215,45 @@ namespace UniDeb
                 String ins2 = "</strong>";
                 currentTextBox.Text = currentTextBox.Text.Insert(currentTextBox.CaretIndex, ins1 + ins2);
                 currentTextBox.CaretIndex = i + ins1.Length;
+            }
+        }
 
+        private void PasteUnderlined(object sender, RoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                int i = currentTextBox.CaretIndex;
+                String ins1 = "<u>";
+                String ins2 = "</u>";
+                currentTextBox.Text = currentTextBox.Text.Insert(currentTextBox.CaretIndex, ins1 + ins2);
+                currentTextBox.CaretIndex = i + ins1.Length;
+            }
+        }
 
+        private void PasteSub(object sender, RoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                int i = currentTextBox.CaretIndex;
+                String ins1 = "<sub>";
+                String ins2 = "</sub>";
+                currentTextBox.Text = currentTextBox.Text.Insert(currentTextBox.CaretIndex, ins1 + ins2);
+                currentTextBox.CaretIndex = i + ins1.Length;
+            }
+        }
+
+        private void PasteSup(object sender, RoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                int i = currentTextBox.CaretIndex;
+                String ins1 = "<sup>";
+                String ins2 = "</sup>";
+                currentTextBox.Text = currentTextBox.Text.Insert(currentTextBox.CaretIndex, ins1 + ins2);
+                currentTextBox.CaretIndex = i + ins1.Length;
             }
         }
 
@@ -195,6 +272,33 @@ namespace UniDeb
             {
                 TextBox currentTextBox = this.service.CurrentTextbox;
                 currentTextBox.SelectedText = "<strong>" + currentTextBox.SelectedText + "</strong>";
+            }
+        }
+
+        private void ChangeToUnderlined(object sender, RoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                currentTextBox.SelectedText = "<u>" + currentTextBox.SelectedText + "</u>";
+            }
+        }
+
+        private void ChangeToSup(object sender, RoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                currentTextBox.SelectedText = "<sup>" + currentTextBox.SelectedText + "</sup>";
+            }
+        }
+
+        private void ChangeToSub(object sender, RoutedEventArgs e)
+        {
+            if (this.service.CurrentTextbox != null)
+            {
+                TextBox currentTextBox = this.service.CurrentTextbox;
+                currentTextBox.SelectedText = "<sub>" + currentTextBox.SelectedText + "</sub>";
             }
         }
     }

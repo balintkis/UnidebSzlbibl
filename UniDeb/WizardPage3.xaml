@@ -340,7 +340,10 @@
 
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBox x:Name="TxtbxPreview" AcceptsReturn="True" TextWrapping="Wrap" Width="350" />
+                <StackPanel Orientation="Vertical">
+                    <TextBox x:Name="TxtbxPreview" AcceptsReturn="True" TextWrapping="Wrap" Width="350" Margin="0,0,0,57" Height="525" />
+                    <Button x:Name="BtnUploadFromPreview" Content="Feltöltés előnézetből" Margin="15,0,15,15" Click="BtnUploadFromPreview_Click"/>
+                </StackPanel>
             </StackPanel>
 
         </StackPanel>

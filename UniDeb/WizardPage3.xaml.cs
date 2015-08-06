@@ -44,6 +44,12 @@ namespace UniDeb
 
         }
 
+        private void StrngesitesFromPreview()
+        {
+            String temp = TxtbxPreview.Text;
+            this.mezok = temp.Split('$');
+        }
+
         private void Strngesites()
         {
             mezok[0] = "" + this.initString;
@@ -389,6 +395,42 @@ namespace UniDeb
             {
                 TextBox currentTextBox = this.service.CurrentTextbox;
                 currentTextBox.SelectedText = "<sub>" + currentTextBox.SelectedText + "</sub>";
+            }
+        }
+
+        private void BtnUploadFromPreview_Click(object sender, RoutedEventArgs e)
+        {
+            StrngesitesFromPreview();
+
+            String connStr = this.service.ConnectionString;
+            MySqlConnection connection = new MySqlConnection(connStr);
+            MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand();
+
+            try
+            {
+                connection.Open();
+                cmd.Connection = connection;
+                cmd.CommandText = "INSERT INTO adat VALUES(NULL, @teljes_szoveg, @megjelenes_eve, @hasznalat_helye, @hasznalat_eve, @szlengtipus, @nyelv, @publikacio_tipusa, @adatkozles_formaja, @publikacio_temeja, @publikacio_celja)";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@teljes_szoveg", this.mezok[0]);
+                cmd.Parameters.AddWithValue("@megjelenes_eve", this.mezok[1]);
+                cmd.Parameters.AddWithValue("@hasznalat_helye", this.mezok[2]);
+                cmd.Parameters.AddWithValue("@hasznalat_eve", this.mezok[3]);
+                cmd.Parameters.AddWithValue("@szlengtipus", this.mezok[4]);
+                cmd.Parameters.AddWithValue("@nyelv", this.mezok[5]);
+                cmd.Parameters.AddWithValue("@publikacio_tipusa", this.mezok[6]);
+                cmd.Parameters.AddWithValue("@adatkozles_formaja", this.mezok[7]);
+                cmd.Parameters.AddWithValue("@publikacio_temeja", this.mezok[8]);
+                cmd.Parameters.AddWithValue("@publikacio_celja", this.mezok[9]);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Rekord sikeresen hozzáadva!", "Feltöltve!", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.wiz2.Close();
+                this.Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

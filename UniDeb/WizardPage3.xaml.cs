@@ -25,13 +25,15 @@ namespace UniDeb
         private String initString;
         private String egybenString;
         private String[] mezok = new String[10];
+        private WizardPage2 wiz2;
 
-        public WizardPage3(String initString)
+        public WizardPage3(String initString, WizardPage2 wiz2)
         {
             this.service = Service.getInstance();
             InitializeComponent();
             mezok[0] = initString;
             this.initString = initString;
+            this.wiz2 = wiz2;
             AddHotKeys();
         }
 
@@ -174,6 +176,7 @@ namespace UniDeb
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Rekord sikeresen hozzáadva!", "Feltöltve!", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.wiz2.Close();
                 this.Close();
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)

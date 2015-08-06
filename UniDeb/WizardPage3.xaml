@@ -302,12 +302,14 @@
                     </ComboBox>
                 </StackPanel>
 
+                <StackPanel Orientation="Horizontal" Margin="212,10,0,0">
+                    <Button x:Name="Btn_bold" Content="Félkövér"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToBold" />
+                    <Button x:Name="Btn_italic" Content="Dőlt"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToItalic" />
+                </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="150,10,0,0">
-                    <Button x:Name="Btn_bold" FontSize="8" Content="Félkövér"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToBold" />
-                    <Button x:Name="Btn_italic" FontSize="8" Content="Dőlt"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToItalic" />
-                    <Button x:Name="Btn_underlined" FontSize="8" Content="Aláhúzott"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToUnderlined" />
-                    <Button x:Name="Btn_sup" FontSize="8" Content="Felsőindex"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSup" />
-                    <Button x:Name="Btn_sub" FontSize="8" Content="Alsóindex"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSub" />
+                    <Button x:Name="Btn_underlined" Content="Aláhúzott"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToUnderlined" />
+                    <Button x:Name="Btn_sup" Content="Felső index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSup" />
+                    <Button x:Name="Btn_sub" Content="Alsó index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSub" />
                 </StackPanel>
 
                 <Image HorizontalAlignment="Center" Height="121" VerticalAlignment="Center" Width="264" Source="/Images/dirt.png" Margin="0,20,0,0" Opacity="0.1" />

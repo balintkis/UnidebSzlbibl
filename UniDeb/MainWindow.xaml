@@ -96,11 +96,11 @@
                                             </StackPanel>
                                             <StackPanel Orientation="Horizontal">
                                                 <StackPanel Orientation="Vertical" Margin="560,0,0,0">
-                                                    <Button x:Name="Btn_bold" FontSize="8" Content="Félkövér"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToBold" />
-                                                    <Button x:Name="Btn_italic" FontSize="8" Content="Dőlt"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToItalic" />
-                                                    <Button x:Name="Btn_underlined" FontSize="8" Content="Aláhúzott"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToUnderlined" />
-                                                    <Button x:Name="Btn_sup" FontSize="8" Content="Felsőindex"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSup" />
-                                                    <Button x:Name="Btn_sub" FontSize="8" Content="Alsóindex"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSub" />
+                                                    <Button x:Name="Btn_bold" Content="Félkövér"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToBold" />
+                                                    <Button x:Name="Btn_italic" Content="Dőlt"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToItalic" />
+                                                    <Button x:Name="Btn_underlined" Content="Aláhúzott"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToUnderlined" />
+                                                    <Button x:Name="Btn_sup" Content="Felső index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSup" />
+                                                    <Button x:Name="Btn_sub" Content="Alsó index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSub" />
                                                 </StackPanel>
                                             </StackPanel>
 
@@ -170,11 +170,11 @@
                                             </StackPanel>
                                             <StackPanel Orientation="Horizontal">
                                                 <StackPanel Orientation="Vertical" Margin="560,0,0,0">
-                                                    <Button x:Name="Btn_bold2" FontSize="8" Content="Félkövér"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToBold" />
-                                                    <Button x:Name="Btn_italic2" FontSize="8" Content="Dőlt"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToItalic" />
-                                                    <Button x:Name="Btn_underlined2" FontSize="8" Content="Aláhúzott"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToUnderlined" />
-                                                    <Button x:Name="Btn_sup2" FontSize="8" Content="Felsőindex"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSup" />
-                                                    <Button x:Name="Btn_sub2" FontSize="8" Content="Alsóindex"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSub" />
+                                                    <Button x:Name="Btn_bold2" Content="Félkövér"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToBold" />
+                                                    <Button x:Name="Btn_italic2" Content="Dőlt"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToItalic" />
+                                                    <Button x:Name="Btn_underlined2" Content="Aláhúzott"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToUnderlined" />
+                                                    <Button x:Name="Btn_sup2" Content="Felső index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSup" />
+                                                    <Button x:Name="Btn_sub2" Content="Alsó index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSub" />
                                                 </StackPanel>
                                             </StackPanel>
 
@@ -260,11 +260,11 @@
                                             </StackPanel>
                                             <StackPanel Orientation="Horizontal">
                                                 <StackPanel Orientation="Vertical" Margin="560,0,0,0">
-                                                    <Button x:Name="Btn_bold3" FontSize="8" Content="Félkövér"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToBold" />
-                                                    <Button x:Name="Btn_italic3" FontSize="8" Content="Dőlt"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToItalic" />
-                                                    <Button x:Name="Btn_underlined3" FontSize="8" Content="Aláhúzott"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToUnderlined" />
-                                                    <Button x:Name="Btn_sup3" FontSize="8" Content="Felsőindex"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSup" />
-                                                    <Button x:Name="Btn_sub3" FontSize="8" Content="Alsóindex"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSub" />
+                                                    <Button x:Name="Btn_bold3" Content="Félkövér"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToBold" />
+                                                    <Button x:Name="Btn_italic3" Content="Dőlt"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToItalic" />
+                                                    <Button x:Name="Btn_underlined3" Content="Aláhúzott"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToUnderlined" />
+                                                    <Button x:Name="Btn_sup3" Content="Felső index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSup" />
+                                                    <Button x:Name="Btn_sub3" Content="Alsó index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSub" />
                                                 </StackPanel>
                                             </StackPanel>
 
@@ -316,11 +316,11 @@
                                             </StackPanel>
                                             <StackPanel Orientation="Horizontal">
                                                 <StackPanel Orientation="Vertical" Margin="560,0,0,0">
-                                                    <Button x:Name="Btn_bold4" FontSize="8" Content="Félkövér"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToBold" />
-                                                    <Button x:Name="Btn_italic4" FontSize="8" Content="Dőlt"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToItalic" />
-                                                    <Button x:Name="Btn_underlined4" FontSize="8" Content="Aláhúzott"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToUnderlined" />
-                                                    <Button x:Name="Btn_sup4" FontSize="8" Content="Felsőindex"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSup" />
-                                                    <Button x:Name="Btn_sub4" FontSize="8" Content="Alsóindex"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSub" />
+                                                    <Button x:Name="Btn_bold4" Content="Félkövér"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToBold" />
+                                                    <Button x:Name="Btn_italic4" Content="Dőlt"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToItalic" />
+                                                    <Button x:Name="Btn_underlined4" Content="Aláhúzott"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToUnderlined" />
+                                                    <Button x:Name="Btn_sup4" Content="Felső index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSup" />
+                                                    <Button x:Name="Btn_sub4" Content="Alsó index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSub" />
                                                 </StackPanel>
                                             </StackPanel>
                                         </Grid>
@@ -374,11 +374,11 @@
                                             </StackPanel>
                                             <StackPanel Orientation="Horizontal">
                                                 <StackPanel Orientation="Vertical" Margin="560,0,0,0">
-                                                    <Button x:Name="Btn_bold5" FontSize="8" Content="Félkövér"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToBold" />
-                                                    <Button x:Name="Btn_italic5" FontSize="8" Content="Dőlt"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToItalic" />
-                                                    <Button x:Name="Btn_underlined5" FontSize="8" Content="Aláhúzott"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToUnderlined" />
-                                                    <Button x:Name="Btn_sup5" FontSize="8" Content="Felsőindex"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSup" />
-                                                    <Button x:Name="Btn_sub5" FontSize="8" Content="Alsóindex"  Width="50" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSub" />
+                                                    <Button x:Name="Btn_bold5" Content="Félkövér"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToBold" />
+                                                    <Button x:Name="Btn_italic5" Content="Dőlt"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToItalic" />
+                                                    <Button x:Name="Btn_underlined5" Content="Aláhúzott"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToUnderlined" />
+                                                    <Button x:Name="Btn_sup5" Content="Felső index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSup" />
+                                                    <Button x:Name="Btn_sub5" Content="Alsó index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSub" />
                                                 </StackPanel>
                                             </StackPanel>
                                         </Grid>

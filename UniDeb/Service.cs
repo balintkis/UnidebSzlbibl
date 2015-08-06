@@ -44,7 +44,7 @@ namespace UniDeb
 
         public void Hotkeys(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Ctrl + I: Kiválasztott szöveg dőlté" + Environment.NewLine +
+            MessageBox.Show("Ctrl + I: Kiválasztott szöveg dőltté" + Environment.NewLine +
                                 "Alt + I : Dőlt címkék beszúrása" + Environment.NewLine +
                                 Environment.NewLine +
                                 "Ctrl + B: Kiválasztott szöveg félkövérré" + Environment.NewLine +
@@ -53,11 +53,11 @@ namespace UniDeb
                                 "Ctrl + U: Kiválasztott szöveg aláhúzottá" + Environment.NewLine +
                                 "Alt + U : Aláhúzott címkék beszúrása" + Environment.NewLine +
                                 Environment.NewLine +
-                                "Ctrl + P: Kiválasztott szöveg felsőindexűvé" + Environment.NewLine +
-                                "Alt + P : Felsőindex címkék beszúrása" + Environment.NewLine +
+                                "Ctrl + P: Kiválasztott szöveg felső indexűvé" + Environment.NewLine +
+                                "Alt + P : Felső index címkék beszúrása" + Environment.NewLine +
                                 Environment.NewLine +
-                                "Ctrl + L: Kiválasztott szöveg alsóindexűvé" + Environment.NewLine +
-                                "Alt + L : Alsóindex címkék beszúrása" + Environment.NewLine +
+                                "Ctrl + L: Kiválasztott szöveg alsó indexűvé" + Environment.NewLine +
+                                "Alt + L : Alsó index címkék beszúrása" + Environment.NewLine +
                                 Environment.NewLine +
                                 "Ctrl + Alt + '-' : —" + Environment.NewLine +
                                 "Ctrl + '-'          : –" + Environment.NewLine +

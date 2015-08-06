@@ -189,7 +189,8 @@ namespace UniDeb
             { mezok = mezok + "."; }
             else mezok = mezok + " : " + Txtbx1_2_10.Text + ".";
 
-            mezok = mezok + " (" + Txtbx1_2_11.Text + " lap).";
+            if (Txtbx1_2_11.Text != "")
+                mezok = mezok + " (" + Txtbx1_2_11.Text + " lap).";
 
 
             mezok += "</span>";
@@ -301,7 +302,7 @@ namespace UniDeb
         {
             String mezok = @"<span class=""kiemelt"">";
             if (Txtbx1_5_1.Text != "")
-                mezok = "<strong>" + Txtbx1_5_1.Text + "</strong>";
+                mezok += "<strong>" + Txtbx1_5_1.Text + "</strong>";
 
             if (Txtbx1_5_2.Text != "")
                 mezok = mezok + " " + Txtbx1_5_2.Text + ".";

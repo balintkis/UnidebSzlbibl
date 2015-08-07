@@ -17,6 +17,8 @@ using MySql.Data.MySqlClient;
 using System.Data;
 using System.Diagnostics;
 using System.Data.SqlClient;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace UniDeb
 {
@@ -34,6 +36,7 @@ namespace UniDeb
             InitializeComponent();
             service = Service.getInstance();
             AddHotKeys();
+            DefaultConnectionFromFile();
 
         }
 
@@ -967,6 +970,36 @@ namespace UniDeb
             }
         }
 
+
+        private void DefaultConnectionFromFile() {
+
+            if (File.Exists("adatb-kapcs.adb"))
+            {
+
+                ConnectionArrayList conns = new ConnectionArrayList();
+                //Open the file written above and read values from it.
+                Stream stream = File.Open("adatb-kapcs.adb", FileMode.Open);
+                BinaryFormatter bformatter = new BinaryFormatter();
+
+                conns = (ConnectionArrayList)bformatter.Deserialize(stream);
+                stream.Close();
+                
+                foreach (Connection con in conns.Conns)
+                {
+                    if (con.IsDefault) {
+                        this.service = Service.getInstance();
+                        service.ConnectionString = "server=" +
+                           con.Url + ";user=" +
+                           con.Username + ";database=tkis;port=3306;password=" +
+                           con.Password + ";Charset=utf8;"
+                           ;
+                        CmbbxFillMySQL();
+                    }
+                }
+
+            }
+
+        }
 
 
 

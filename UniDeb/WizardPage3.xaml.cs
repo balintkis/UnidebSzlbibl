@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,174 @@ namespace UniDeb
             this.initString = initString;
             this.wiz2 = wiz2;
             AddHotKeys();
+            FillCmbbxs();
+        }
+
+        private void FillCmbbxs()
+        {
+
+            string connStr = this.service.ConnectionString;
+
+            // 1. cmbbx
+            // -.-
+            string sql = "SELECT hely FROM hasznhelye";
+            try
+            {
+                DataTable _dt = new DataTable();
+                MySqlConnection connection = new MySqlConnection(connStr);
+                MySqlCommand cmdSel = new MySqlCommand(sql, connection);
+                MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
+                da3.Fill(_dt);
+                Cmbbx3_1_3helye.Items.Clear();
+                foreach (DataRow _dr in _dt.Rows)
+                {
+                    Cmbbx3_1_3helye.Items.Add(_dr["hely"].ToString());
+                }
+                connection.Close();
+            }
+
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            // 2. cmbbx
+            // -.-
+            sql = "SELECT tipus FROM szlengtipus";
+            try
+            {
+                DataTable _dt = new DataTable();
+                MySqlConnection connection = new MySqlConnection(connStr);
+                MySqlCommand cmdSel = new MySqlCommand(sql, connection);
+                MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
+                da3.Fill(_dt);
+                Cmbbx3_1_5szlengtipus.Items.Clear();
+                foreach (DataRow _dr in _dt.Rows)
+                {
+                    Cmbbx3_1_5szlengtipus.Items.Add(_dr["tipus"].ToString());
+                }
+                connection.Close();
+            }
+
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            // 3. cmbbx
+            // -.-
+            sql = "SELECT nyelv FROM melynyelv";
+            try
+            {
+                DataTable _dt = new DataTable();
+                MySqlConnection connection = new MySqlConnection(connStr);
+                MySqlCommand cmdSel = new MySqlCommand(sql, connection);
+                MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
+                da3.Fill(_dt);
+                Cmbbx3_1_6nyelv.Items.Clear();
+                foreach (DataRow _dr in _dt.Rows)
+                {
+                    Cmbbx3_1_6nyelv.Items.Add(_dr["nyelv"].ToString());
+                }
+                connection.Close();
+            }
+
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            // 4. cmbbx
+            // -.-
+            sql = "SELECT fajta FROM publikaciofajtaja";
+            try
+            {
+                DataTable _dt = new DataTable();
+                MySqlConnection connection = new MySqlConnection(connStr);
+                MySqlCommand cmdSel = new MySqlCommand(sql, connection);
+                MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
+                da3.Fill(_dt);
+                Cmbbx3_1_7publikacio_fajt.Items.Clear();
+                foreach (DataRow _dr in _dt.Rows)
+                {
+                    Cmbbx3_1_7publikacio_fajt.Items.Add(_dr["fajta"].ToString());
+                }
+                connection.Close();
+            }
+
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            // 5. cmbbx
+            // -.-
+            sql = "SELECT forma FROM adatkozlesformaja";
+            try
+            {
+                DataTable _dt = new DataTable();
+                MySqlConnection connection = new MySqlConnection(connStr);
+                MySqlCommand cmdSel = new MySqlCommand(sql, connection);
+                MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
+                da3.Fill(_dt);
+                Cmbbx3_1_8adatkozl_forma.Items.Clear();
+                foreach (DataRow _dr in _dt.Rows)
+                {
+                    Cmbbx3_1_8adatkozl_forma.Items.Add(_dr["forma"].ToString());
+                }
+                connection.Close();
+            }
+
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            // 6. cmbbx
+            // -.-
+            sql = "SELECT tema FROM publikaciotemaja";
+            try
+            {
+                DataTable _dt = new DataTable();
+                MySqlConnection connection = new MySqlConnection(connStr);
+                MySqlCommand cmdSel = new MySqlCommand(sql, connection);
+                MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
+                da3.Fill(_dt);
+                Cmbbx3_1_9publikacio_tema.Items.Clear();
+                foreach (DataRow _dr in _dt.Rows)
+                {
+                    Cmbbx3_1_9publikacio_tema.Items.Add(_dr["tema"].ToString());
+                }
+                connection.Close();
+            }
+
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            // 7. cmbbx
+            // -.-
+            sql = "SELECT cel FROM publikaciocelja";
+            try
+            {
+                DataTable _dt = new DataTable();
+                MySqlConnection connection = new MySqlConnection(connStr);
+                MySqlCommand cmdSel = new MySqlCommand(sql, connection);
+                MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
+                da3.Fill(_dt);
+                Cmbbx3_1_10publikacio_celja.Items.Clear();
+                foreach (DataRow _dr in _dt.Rows)
+                {
+                    Cmbbx3_1_10publikacio_celja.Items.Add(_dr["cel"].ToString());
+                }
+                connection.Close();
+            }
+
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void BtnPreview_Click(object sender, RoutedEventArgs e)
@@ -434,34 +603,63 @@ namespace UniDeb
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnAddOption_Click(object sender, RoutedEventArgs e)
         {
-
-
-            try
+            string tabla = "";
+            if (cmbbxUpdateCmbbxs.SelectedValue != null)
             {
-                foreach (var item in Cmbbx3_1_10publikacio_celja.Items)
+                switch (cmbbxUpdateCmbbxs.SelectedValue.ToString())
+            {
+                case "3. Használat helye":
+                    tabla = "hasznhelye";
+                    break;
+                case "4. Szlengtípus":
+                    tabla = "szlengtipus";
+                    break;
+                case "5. Mely nyelv szlengje":
+                    tabla = "melynyelv";
+                    break;
+                case "7. Publikáció fajtája":
+                    tabla = "publikaciofajtaja";
+                    break;
+                case "8. Az adatközlés fajtája":
+                    tabla = "adatkozlesformaja";
+                    break;
+                case "9. Publikáció témája":
+                    tabla = "publikaciotemaja";
+                    break;
+                case "10. Publikáció célja":
+                    tabla = "publikaciocelja";
+                    break;
+            }
+
+           
+                String connStr = this.service.ConnectionString;
+                MySqlConnection connection = new MySqlConnection(connStr);
+                MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand();
+
+                try
                 {
-                    String connStr = this.service.ConnectionString;
-                    MySqlConnection connection = new MySqlConnection(connStr);
-                    MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand();
                     connection.Open();
                     cmd.Connection = connection;
-                    cmd.CommandText = "INSERT INTO publikaciocelja VALUES(NULL, @jelleg)";
+                    cmd.CommandText = "INSERT INTO " + tabla + " VALUES (NULL, @ertek)";
                     cmd.Prepare();
-                    String temp = item.ToString().Substring("System.Windows.Controls.ComboBoxItem: ".Length);
-                    cmd.Parameters.AddWithValue("@jelleg", temp);
+                    cmd.Parameters.AddWithValue("@ertek", TxtbxAddOption.Text);
+                    //MessageBox.Show(cmd.CommandText);
                     cmd.ExecuteNonQuery();
-                    connection.Close();
+                    MessageBox.Show("Menü sikeresen bővítve!", "Feltöltve!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    FillCmbbxs();
                 }
-
-                MessageBox.Show("Rekordok sikeresen hozzáadva!", "Feltöltve!", MessageBoxButton.OK, MessageBoxImage.Information);
-
+                catch (MySql.Data.MySqlClient.MySqlException ex)
+                {
+                    MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            else
+                MessageBox.Show("Nincs mező kiválasztva!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
         }
+
+
+
     }
 }

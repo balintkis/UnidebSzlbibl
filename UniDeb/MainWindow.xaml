@@ -69,14 +69,7 @@
                                                     </StackPanel>
                                                     <StackPanel Orientation="Horizontal">
                                                         <Label Content="A mű jellege:" Width="150" />
-                                                        <ComboBox x:Name="Cmbbx1_1_9mujelleg" Width="400" SelectedValuePath="Content">
-                                                            <ComboBoxItem Content="PhD-értekezés" />
-                                                            <ComboBoxItem Content="Doktori-értekezés" />
-                                                            <ComboBoxItem Content="Kézirat" />
-                                                            <ComboBoxItem Content="Diákköri dolgozat" />
-                                                            <ComboBoxItem Content="Pályamunka" />
-                                                            <ComboBoxItem Content="Szakdolgozat" />
-                                                        </ComboBox>
+                                                        <ComboBox x:Name="Cmbbx1_1_9mujelleg" Width="400" ItemsSource="{Binding}" SelectedValuePath="Content" />
                                                     </StackPanel>
                                                     <StackPanel Orientation="Horizontal">
                                                         <Label Content="Kiadás helye:" Width="150" />
@@ -90,8 +83,10 @@
                                                         <Label Content="Lapok száma:" Width="150" />
                                                         <TextBox x:Name="Txtbx1_1_12lapokszama" Width="400"/>
                                                     </StackPanel>
+                                                    <Button x:Name="Btn_1_1_3Connect" Content="Csatlakozás"  Width="75" HorizontalAlignment="Left" Margin="0,50,0,0" Click="Btn_1_1_3Connect_Click" />
                                                     <Button x:Name="Btn_1_1_2Clear" Content="Törlés"  Width="75" HorizontalAlignment="Left" Margin="0,50,0,0" Click="Btn_1_1_2Clear_Click" />
                                                     <Button x:Name="Btn_1_1_1Continue" Content="Tovább"  Width="75" HorizontalAlignment="Left" Margin="0,0,0,0" Click="Btn_1_1_1Continue_Click" />
+                                                    
                                                 </StackPanel>
                                             </StackPanel>
                                             <StackPanel Orientation="Horizontal">
@@ -101,6 +96,9 @@
                                                     <Button x:Name="Btn_underlined" Content="Aláhúzott"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToUnderlined" />
                                                     <Button x:Name="Btn_sup" Content="Felső index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSup" />
                                                     <Button x:Name="Btn_sub" Content="Alsó index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSub" />
+
+                                                    <TextBox x:Name="Txtbx_cmbbxbov1" Width="112" Margin="0,87,0,0"/>
+                                                    <Button x:Name="Btn_CmbbxBov1" Content="Opció hozzáadása"  Width="112" HorizontalAlignment="Left" Click="Btn_CmbbxBov1_Click"   />
                                                 </StackPanel>
                                             </StackPanel>
 
@@ -145,12 +143,7 @@
                                                     </StackPanel>
                                                     <StackPanel Orientation="Horizontal">
                                                         <Label Content="A mű jellege:" Width="150" />
-                                                        <ComboBox x:Name="Cmbbx1_2_1" Width="400" SelectedValuePath="Content">
-                                                            <ComboBoxItem Content="Kézirat" />
-                                                            <ComboBoxItem Content="Diákköri dolgozat" />
-                                                            <ComboBoxItem Content="Pályamunka" />
-                                                            <ComboBoxItem Content="Szakdolgozat" />
-                                                        </ComboBox>
+                                                        <ComboBox x:Name="Cmbbx1_2_1" Width="400" SelectedValuePath="Content" />
                                                     </StackPanel>
                                                     <StackPanel Orientation="Horizontal">
                                                         <Label Content="Kiadás helye:" Width="150" />
@@ -175,6 +168,9 @@
                                                     <Button x:Name="Btn_underlined2" Content="Aláhúzott"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToUnderlined" />
                                                     <Button x:Name="Btn_sup2" Content="Felső index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSup" />
                                                     <Button x:Name="Btn_sub2" Content="Alsó index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSub" />
+
+                                                    <TextBox x:Name="Txtbx_cmbbxbov2" Width="112" Margin="0,87,0,0"/>
+                                                    <Button x:Name="Btn_CmbbxBov2" Content="Opció hozzáadása"  Width="112" HorizontalAlignment="Left"  Click="Btn_CmbbxBov2_Click" />
                                                 </StackPanel>
                                             </StackPanel>
 
@@ -235,12 +231,7 @@
                                                     </StackPanel>
                                                     <StackPanel Orientation="Horizontal">
                                                         <Label Content="A mű jellege:" Width="150" />
-                                                        <ComboBox x:Name="Cmbbx1_3_1" Width="400" SelectedValuePath="Content">
-                                                            <ComboBoxItem Content="Kézirat" />
-                                                            <ComboBoxItem Content="Diákköri dolgozat" />
-                                                            <ComboBoxItem Content="Pályamunka" />
-                                                            <ComboBoxItem Content="Szakdolgozat" />
-                                                        </ComboBox>
+                                                        <ComboBox x:Name="Cmbbx1_3_1" Width="400" SelectedValuePath="Content" />
                                                     </StackPanel>
                                                     <StackPanel Orientation="Horizontal">
                                                         <Label Content="Kiadás helye:" Width="150" />
@@ -265,6 +256,9 @@
                                                     <Button x:Name="Btn_underlined3" Content="Aláhúzott"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToUnderlined" />
                                                     <Button x:Name="Btn_sup3" Content="Felső index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSup" />
                                                     <Button x:Name="Btn_sub3" Content="Alsó index"  Width="112" HorizontalAlignment="Left" Margin="0,0,0,0" Click="ChangeToSub" />
+
+                                                    <TextBox x:Name="Txtbx_cmbbxbox3" Width="112" Margin="0,181,0,0"/>
+                                                    <Button x:Name="Btn_CmbbxBox3" Content="Opció hozzáadása"  Width="112" HorizontalAlignment="Left"  Click="Btn_CmbbxBov3_Click" />
                                                 </StackPanel>
                                             </StackPanel>
 
@@ -419,7 +413,7 @@
                     </TabItem>
                 </TabControl>
             </StackPanel>
-            <Viewbox Height="100"/>
+            <Viewbox Height="100" Margin="0,0,-0.333,0"/>
         </StackPanel>
     </Grid>
 

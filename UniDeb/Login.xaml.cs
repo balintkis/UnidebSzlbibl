@@ -31,7 +31,7 @@ namespace UniDeb
             service.ConnectionString = "server=" +
                 TxtbxUrl.Text + ";user=" +
                 TxtbxUsername.Text + ";database=tkis;port=3306;password=" +
-                TxtbxPassword.Text + ";"
+                TxtbxPassword.Text + ";Charset=utf8;"
                 ;
             this.Close();
         }

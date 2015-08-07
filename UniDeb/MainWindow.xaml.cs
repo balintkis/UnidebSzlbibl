@@ -33,6 +33,7 @@ namespace UniDeb
             InitializeComponent();
             service = Service.getInstance();
             AddHotKeys();
+
         }
 
 
@@ -619,7 +620,7 @@ namespace UniDeb
                 RoutedCommand thirteenthSettings = new RoutedCommand();
                 thirteenthSettings.InputGestures.Add(new KeyGesture(Key.F1));
                 CommandBindings.Add(new CommandBinding(thirteenthSettings, this.service.Hotkeys));
-                
+
                 RoutedCommand fourteenthSettings = new RoutedCommand();
                 fourteenthSettings.InputGestures.Add(new KeyGesture(Key.F2));
                 CommandBindings.Add(new CommandBinding(fourteenthSettings, this.service.Login));
@@ -775,6 +776,8 @@ namespace UniDeb
         {
             this.service.Hotkeys(sender, e);
         }
+
+        
 
 
     }

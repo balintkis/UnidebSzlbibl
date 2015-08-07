@@ -433,5 +433,35 @@ namespace UniDeb
                 MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            try
+            {
+                foreach (var item in Cmbbx3_1_10publikacio_celja.Items)
+                {
+                    String connStr = this.service.ConnectionString;
+                    MySqlConnection connection = new MySqlConnection(connStr);
+                    MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand();
+                    connection.Open();
+                    cmd.Connection = connection;
+                    cmd.CommandText = "INSERT INTO publikaciocelja VALUES(NULL, @jelleg)";
+                    cmd.Prepare();
+                    String temp = item.ToString().Substring("System.Windows.Controls.ComboBoxItem: ".Length);
+                    cmd.Parameters.AddWithValue("@jelleg", temp);
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                }
+
+                MessageBox.Show("Rekordok sikeresen hozzáadva!", "Feltöltve!", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
 }

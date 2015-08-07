@@ -659,6 +659,11 @@ namespace UniDeb
                 MessageBox.Show("Nincs mező kiválasztva!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
+        private void btnConn_click(object sender, RoutedEventArgs e)
+        {
+            FillCmbbxs();
+        }
+
 
 
     }

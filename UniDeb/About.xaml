@@ -6,12 +6,12 @@
     <Grid>
         <Button Content="OK" HorizontalAlignment="Left" Margin="282,173,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Image HorizontalAlignment="Left" Height="235" VerticalAlignment="Top" Width="253" Source="/Images/boot1.png" Margin="0,0,0,-25.667"/>
-        <TextBlock HorizontalAlignment="Right" Margin="10,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="Auto" Width="163" RenderTransformOrigin="0.47,1.541"><Bold>Adatbázis bevivő</Bold><LineBreak/>v. 0.7 <LineBreak/>
+        <TextBlock HorizontalAlignment="Right" Margin="10,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="Auto" Width="163" RenderTransformOrigin="0.47,1.541"><Bold>Adatbázis bevivő</Bold><LineBreak/>v. 0.8 <LineBreak/>
             <LineBreak/><Bold>Kis Tamás</Bold>
             <LineBreak/>► tkis62@gmail.com
             <LineBreak/>
             <LineBreak/><Bold>Kis Bálint</Bold>
-            <LineBreak/>► kis.balint42@gmail.com
+            <LineBreak/>► kis.balint.42@gmail.com
         </TextBlock>
     </Grid>
 </Window>

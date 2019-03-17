@@ -139,7 +139,7 @@ namespace UniDeb
                 if (Txtbx1_1_8sorozat.Text != "")
                     mezok = mezok + " (" + Txtbx1_1_8sorozat.Text + ").";
 
-                if (Cmbbx1_1_9mujelleg.SelectedItem != null)
+                if (Cmbbx1_1_9mujelleg.SelectedValue != null)
                     mezok = mezok +
                         " (" + Cmbbx1_1_9mujelleg.SelectedValue.ToString() + ").";
 
@@ -193,7 +193,7 @@ namespace UniDeb
                 if (Txtbx1_2_8.Text != "")
                     mezok = mezok + " (" + Txtbx1_2_8.Text + ").";
 
-                if (Cmbbx1_2_1.SelectedItem != null)
+                if (Cmbbx1_2_1.SelectedValue != null)
                     mezok = mezok +
                          " (" + Cmbbx1_2_1.SelectedValue.ToString() + ")";
 
@@ -259,7 +259,7 @@ namespace UniDeb
                 if (Txtbx1_3_12.Text != "")
                     mezok = mezok + " (" + Txtbx1_3_12.Text + ").";
 
-                if (Cmbbx1_3_1.SelectedItem != null)
+                if (Cmbbx1_3_1.SelectedValue != null)
                     mezok = mezok +
                         " (" + Cmbbx1_3_1.SelectedValue.ToString() + ").";
 

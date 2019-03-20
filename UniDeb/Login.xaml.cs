@@ -33,18 +33,18 @@ namespace UniDeb
 
         private void send_Click(object sender, RoutedEventArgs e)
         {
-            if (cmbBxConnectionSelector.SelectedValue != null)
+            if (cmbBxConnectionSelector.SelectedItem != null)
             {
                 foreach (Connection con in this.connections.Conns) {
                     con.IsDefault = false;
                 }
 
-                ((Connection)this.cmbBxConnectionSelector.SelectedValue).IsDefault = true;
+                ((Connection)this.cmbBxConnectionSelector.SelectedItem).IsDefault = true;
                 this.service = Service.getInstance();
                 service.ConnectionString = "server=" +
-                    ((Connection)this.cmbBxConnectionSelector.SelectedValue).Url + ";user=" +
-                    ((Connection)this.cmbBxConnectionSelector.SelectedValue).Username + ";database=tkis;port=3306;password=" +
-                    ((Connection)this.cmbBxConnectionSelector.SelectedValue).Password + ";Charset=utf8;"
+                    ((Connection)this.cmbBxConnectionSelector.SelectedItem).Url + ";user=" +
+                    ((Connection)this.cmbBxConnectionSelector.SelectedItem).Username + ";database=tkis;port=3306;password=" +
+                    ((Connection)this.cmbBxConnectionSelector.SelectedItem).Password + ";Charset=utf8;"
                     ;
                 SaveToFile();
                 this.Close();
@@ -100,9 +100,9 @@ namespace UniDeb
         private void delete_Click(object sender, RoutedEventArgs e)
         {
 
-            if (cmbBxConnectionSelector.SelectedValue != null)
+            if (cmbBxConnectionSelector.SelectedItem != null)
             {
-                this.connections.Conns.Remove((Connection)cmbBxConnectionSelector.SelectedValue);
+                this.connections.Conns.Remove((Connection)cmbBxConnectionSelector.SelectedItem);
                 RefreshCmbbx();
                 SaveToFile();
             }

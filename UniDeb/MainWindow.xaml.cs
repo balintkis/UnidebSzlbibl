@@ -139,9 +139,9 @@ namespace UniDeb
                 if (Txtbx1_1_8sorozat.Text != "")
                     mezok = mezok + " (" + Txtbx1_1_8sorozat.Text + ").";
 
-                if (Cmbbx1_1_9mujelleg.SelectedValue != null)
+                if (Cmbbx1_1_9mujelleg.SelectedItem != null)
                     mezok = mezok +
-                        " (" + Cmbbx1_1_9mujelleg.SelectedValue.ToString() + ").";
+                        " (" + Cmbbx1_1_9mujelleg.SelectedItem.ToString() + ").";
 
                 if (Txtbx1_1_10kiadashelye.Text != "")
                     mezok = mezok + " " + Txtbx1_1_10kiadashelye.Text;
@@ -193,9 +193,9 @@ namespace UniDeb
                 if (Txtbx1_2_8.Text != "")
                     mezok = mezok + " (" + Txtbx1_2_8.Text + ").";
 
-                if (Cmbbx1_2_1.SelectedValue != null)
+                if (Cmbbx1_2_1.SelectedItem != null)
                     mezok = mezok +
-                         " (" + Cmbbx1_2_1.SelectedValue.ToString() + ")";
+                         " (" + Cmbbx1_2_1.SelectedItem.ToString() + ")";
 
                 if (Txtbx1_2_9.Text != "")
                     mezok = mezok + " " + Txtbx1_2_9.Text;
@@ -259,9 +259,9 @@ namespace UniDeb
                 if (Txtbx1_3_12.Text != "")
                     mezok = mezok + " (" + Txtbx1_3_12.Text + ").";
 
-                if (Cmbbx1_3_1.SelectedValue != null)
+                if (Cmbbx1_3_1.SelectedItem != null)
                     mezok = mezok +
-                        " (" + Cmbbx1_3_1.SelectedValue.ToString() + ").";
+                        " (" + Cmbbx1_3_1.SelectedItem.ToString() + ").";
 
                 if (Txtbx1_3_13.Text != "")
                     mezok = mezok + " " + Txtbx1_3_13.Text;
@@ -815,9 +815,7 @@ namespace UniDeb
             {
                 DataTable _dt = new DataTable();
                 MySqlConnection connection = new MySqlConnection(connStr);
-
                 MySqlCommand cmdSel = new MySqlCommand(sql, connection);
-
                 MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
                 da3.Fill(_dt);
 

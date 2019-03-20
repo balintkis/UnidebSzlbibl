@@ -227,10 +227,10 @@ namespace UniDeb
             mezok[1] = "" + Txtbx3_1_2.Text;
             this.egybenString += Txtbx3_1_2.Text + "$";
 
-            if (Cmbbx3_1_3helye.SelectedValue != null)
+            if (Cmbbx3_1_3helye.SelectedItem != null)
             {
-                this.egybenString += Cmbbx3_1_3helye.SelectedValue.ToString() + "$";
-                mezok[2] = Cmbbx3_1_3helye.SelectedValue.ToString();
+                this.egybenString += Cmbbx3_1_3helye.SelectedItem.ToString() + "$";
+                mezok[2] = Cmbbx3_1_3helye.SelectedItem.ToString();
             }
             else
             {
@@ -241,10 +241,10 @@ namespace UniDeb
             this.egybenString += Txtbx3_1_4.Text + "$";
             mezok[3] = "" + Txtbx3_1_4.Text;
 
-            if (Cmbbx3_1_5szlengtipus.SelectedValue != null)
+            if (Cmbbx3_1_5szlengtipus.SelectedItem != null)
             {
-                this.egybenString += Cmbbx3_1_5szlengtipus.SelectedValue.ToString() + "$";
-                mezok[4] = Cmbbx3_1_5szlengtipus.SelectedValue.ToString();
+                this.egybenString += Cmbbx3_1_5szlengtipus.SelectedItem.ToString() + "$";
+                mezok[4] = Cmbbx3_1_5szlengtipus.SelectedItem.ToString();
             }
             else
             {
@@ -253,10 +253,10 @@ namespace UniDeb
             }
 
 
-            if (Cmbbx3_1_6nyelv.SelectedValue != null)
+            if (Cmbbx3_1_6nyelv.SelectedItem != null)
             {
-                this.egybenString += Cmbbx3_1_6nyelv.SelectedValue.ToString() + "$";
-                mezok[5] = Cmbbx3_1_6nyelv.SelectedValue.ToString();
+                this.egybenString += Cmbbx3_1_6nyelv.SelectedItem.ToString() + "$";
+                mezok[5] = Cmbbx3_1_6nyelv.SelectedItem.ToString();
             }
             else
             {
@@ -264,10 +264,10 @@ namespace UniDeb
                 this.egybenString += "$";
             }
 
-            if (Cmbbx3_1_7publikacio_fajt.SelectedValue != null)
+            if (Cmbbx3_1_7publikacio_fajt.SelectedItem != null)
             {
-                this.egybenString += Cmbbx3_1_7publikacio_fajt.SelectedValue.ToString() + "$";
-                mezok[6] = Cmbbx3_1_7publikacio_fajt.SelectedValue.ToString();
+                this.egybenString += Cmbbx3_1_7publikacio_fajt.SelectedItem.ToString() + "$";
+                mezok[6] = Cmbbx3_1_7publikacio_fajt.SelectedItem.ToString();
             }
             else
             {
@@ -275,10 +275,10 @@ namespace UniDeb
                 this.egybenString += "$";
             }
 
-            if (Cmbbx3_1_8adatkozl_forma.SelectedValue != null)
+            if (Cmbbx3_1_8adatkozl_forma.SelectedItem != null)
             {
-                this.egybenString += Cmbbx3_1_8adatkozl_forma.SelectedValue.ToString() + "$";
-                mezok[7] = Cmbbx3_1_8adatkozl_forma.SelectedValue.ToString();
+                this.egybenString += Cmbbx3_1_8adatkozl_forma.SelectedItem.ToString() + "$";
+                mezok[7] = Cmbbx3_1_8adatkozl_forma.SelectedItem.ToString();
             }
             else
             {
@@ -286,10 +286,10 @@ namespace UniDeb
                 this.egybenString += "$";
             }
 
-            if (Cmbbx3_1_9publikacio_tema.SelectedValue != null)
+            if (Cmbbx3_1_9publikacio_tema.SelectedItem != null)
             {
-                this.egybenString += Cmbbx3_1_9publikacio_tema.SelectedValue.ToString() + "$";
-                mezok[8] = Cmbbx3_1_9publikacio_tema.SelectedValue.ToString();
+                this.egybenString += Cmbbx3_1_9publikacio_tema.SelectedItem.ToString() + "$";
+                mezok[8] = Cmbbx3_1_9publikacio_tema.SelectedItem.ToString();
             }
             else
             {
@@ -297,10 +297,10 @@ namespace UniDeb
                 this.egybenString += "$";
             }
 
-            if (Cmbbx3_1_10publikacio_celja.SelectedValue != null)
+            if (Cmbbx3_1_10publikacio_celja.SelectedItem != null)
             {
-                this.egybenString += Cmbbx3_1_10publikacio_celja.SelectedValue.ToString() + "$";
-                mezok[9] = Cmbbx3_1_10publikacio_celja.SelectedValue.ToString();
+                this.egybenString += Cmbbx3_1_10publikacio_celja.SelectedItem.ToString() + "$";
+                mezok[9] = Cmbbx3_1_10publikacio_celja.SelectedItem.ToString();
             }
             else
             {
@@ -606,9 +606,9 @@ namespace UniDeb
         private void BtnAddOption_Click(object sender, RoutedEventArgs e)
         {
             string tabla = "";
-            if (cmbbxUpdateCmbbxs.SelectedValue != null)
+            if (cmbbxUpdateCmbbxs.SelectedItem != null)
             {
-                switch (cmbbxUpdateCmbbxs.SelectedValue.ToString())
+                switch (cmbbxUpdateCmbbxs.SelectedItem.ToString())
             {
                 case "3. Használat helye":
                     tabla = "hasznhelye";

@@ -55,9 +55,17 @@ namespace UniDeb
                 MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
                 da3.Fill(_dt);
                 Cmbbx3_1_3helye.Items.Clear();
+
+                List<String> hasznhelyek = new List<string>();
                 foreach (DataRow _dr in _dt.Rows)
                 {
-                    Cmbbx3_1_3helye.Items.Add(_dr["hely"].ToString());
+                    hasznhelyek.Add(_dr["hely"].ToString());
+                }
+                hasznhelyek.Sort();
+
+                foreach (String hasznhely in hasznhelyek)
+                {
+                    Cmbbx3_1_3helye.Items.Add(hasznhely);
                 }
                 connection.Close();
             }
@@ -78,9 +86,17 @@ namespace UniDeb
                 MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
                 da3.Fill(_dt);
                 Cmbbx3_1_5szlengtipus.Items.Clear();
+
+                List<String> szlengtipusok = new List<string>();
                 foreach (DataRow _dr in _dt.Rows)
                 {
-                    Cmbbx3_1_5szlengtipus.Items.Add(_dr["tipus"].ToString());
+                    szlengtipusok.Add(_dr["tipus"].ToString());
+                }
+                szlengtipusok.Sort();
+
+                foreach (String szlengtipus in szlengtipusok)
+                {
+                    Cmbbx3_1_5szlengtipus.Items.Add(szlengtipus);
                 }
                 connection.Close();
             }
@@ -101,9 +117,17 @@ namespace UniDeb
                 MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
                 da3.Fill(_dt);
                 Cmbbx3_1_6nyelv.Items.Clear();
+
+                List<String> nyelvek = new List<string>();
                 foreach (DataRow _dr in _dt.Rows)
                 {
-                    Cmbbx3_1_6nyelv.Items.Add(_dr["nyelv"].ToString());
+                    nyelvek.Add(_dr["nyelv"].ToString());
+                }
+                nyelvek.Sort();
+
+                foreach (String nyelv in nyelvek)
+                {
+                    Cmbbx3_1_6nyelv.Items.Add(nyelv);
                 }
                 connection.Close();
             }
@@ -124,9 +148,17 @@ namespace UniDeb
                 MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
                 da3.Fill(_dt);
                 Cmbbx3_1_7publikacio_fajt.Items.Clear();
+
+                List<String> fajtak = new List<string>();
                 foreach (DataRow _dr in _dt.Rows)
                 {
-                    Cmbbx3_1_7publikacio_fajt.Items.Add(_dr["fajta"].ToString());
+                    fajtak.Add(_dr["fajta"].ToString());
+                }
+                fajtak.Sort();
+
+                foreach (String fajta in fajtak)
+                {
+                    Cmbbx3_1_7publikacio_fajt.Items.Add(fajta);
                 }
                 connection.Close();
             }
@@ -147,9 +179,16 @@ namespace UniDeb
                 MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
                 da3.Fill(_dt);
                 Cmbbx3_1_8adatkozl_forma.Items.Clear();
+
+                List<String> formak = new List<string>();
                 foreach (DataRow _dr in _dt.Rows)
                 {
-                    Cmbbx3_1_8adatkozl_forma.Items.Add(_dr["forma"].ToString());
+                    formak.Add(_dr["forma"].ToString());
+                }
+                formak.Sort();
+                foreach (String forma in formak)
+                {
+                    Cmbbx3_1_8adatkozl_forma.Items.Add(forma);
                 }
                 connection.Close();
             }
@@ -170,9 +209,16 @@ namespace UniDeb
                 MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
                 da3.Fill(_dt);
                 Cmbbx3_1_9publikacio_tema.Items.Clear();
+
+                List<String> temak = new List<string>();
                 foreach (DataRow _dr in _dt.Rows)
                 {
-                    Cmbbx3_1_9publikacio_tema.Items.Add(_dr["tema"].ToString());
+                    temak.Add(_dr["tema"].ToString());
+                }
+                temak.Sort();
+                foreach (String tema in temak)
+                {
+                    Cmbbx3_1_9publikacio_tema.Items.Add(tema);
                 }
                 connection.Close();
             }
@@ -193,9 +239,16 @@ namespace UniDeb
                 MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
                 da3.Fill(_dt);
                 Cmbbx3_1_10publikacio_celja.Items.Clear();
+
+                List<String> celok = new List<string>();
                 foreach (DataRow _dr in _dt.Rows)
                 {
-                    Cmbbx3_1_10publikacio_celja.Items.Add(_dr["cel"].ToString());
+                    celok.Add(_dr["cel"].ToString());
+                }
+                celok.Sort();
+                foreach (String cel in celok)
+                {
+                    Cmbbx3_1_10publikacio_celja.Items.Add(cel);
                 }
                 connection.Close();
             }

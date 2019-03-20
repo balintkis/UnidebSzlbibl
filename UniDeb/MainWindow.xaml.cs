@@ -819,18 +819,27 @@ namespace UniDeb
                 MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
                 da3.Fill(_dt);
 
+                List<String> mujellegek = new List<String>();
                 Cmbbx1_1_9mujelleg.Items.Clear();
+
                 foreach (DataRow _dr in _dt.Rows)
                 {
-                    Cmbbx1_1_9mujelleg.Items.Add(_dr["mujelleg"].ToString());
+                    mujellegek.Add(_dr["mujelleg"].ToString());
                 }
-                connection.Close();
+                mujellegek.Sort();
 
+                foreach (String mujelleg in mujellegek)
+                {
+                    Cmbbx1_1_9mujelleg.Items.Add(mujelleg);
+                }
+
+                connection.Close();
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
                 MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
 
 
             // 2. lap
@@ -849,9 +858,17 @@ namespace UniDeb
                 da3.Fill(_dt);
 
                 Cmbbx1_2_1.Items.Clear();
+
+                List<String> mujellegek = new List<string>();
                 foreach (DataRow _dr in _dt.Rows)
                 {
-                    Cmbbx1_2_1.Items.Add(_dr["mujelleg"].ToString());
+                    mujellegek.Add(_dr["mujelleg"].ToString());
+                }
+                mujellegek.Sort();
+
+                foreach (String mujelleg in mujellegek)
+                {
+                    Cmbbx1_2_1.Items.Add(mujelleg);
                 }
                 connection.Close();
 
@@ -876,9 +893,18 @@ namespace UniDeb
                 MySqlDataAdapter da3 = new MySqlDataAdapter(cmdSel);
                 da3.Fill(_dt);
                 Cmbbx1_3_1.Items.Clear();
+
+
+                List<String> mujellegek = new List<string>();
                 foreach (DataRow _dr in _dt.Rows)
                 {
-                    Cmbbx1_3_1.Items.Add(_dr["mujelleg"].ToString());
+                    mujellegek.Add(_dr["mujelleg"].ToString());
+                }
+                mujellegek.Sort();
+
+                foreach (String mujelleg in mujellegek)
+                {
+                    Cmbbx1_3_1.Items.Add(mujelleg);
                 }
                 connection.Close();
             }

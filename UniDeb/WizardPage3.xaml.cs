@@ -633,7 +633,6 @@ namespace UniDeb
                 connection.Open();
                 cmd.Connection = connection;
                 cmd.CommandText = "INSERT INTO adat VALUES(NULL, @teljes_szoveg, @megjelenes_eve, @hasznalat_helye, @hasznalat_eve, @szlengtipus, @nyelv, @publikacio_tipusa, @adatkozles_formaja, @publikacio_temeja, @publikacio_celja)";
-                cmd.Prepare();
                 cmd.Parameters.AddWithValue("@teljes_szoveg", this.mezok[0]);
                 cmd.Parameters.AddWithValue("@megjelenes_eve", this.mezok[1]);
                 cmd.Parameters.AddWithValue("@hasznalat_helye", this.mezok[2]);
@@ -650,9 +649,9 @@ namespace UniDeb
                 this.wiz2.Close();
                 this.Close();
             }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("An error has occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

@@ -440,8 +440,6 @@ namespace UniDeb
                 cmd.Connection = connection;
 
                 cmd.CommandText = "INSERT INTO adat VALUES(NULL, @teljes_szoveg, @megjelenes_eve, @hasznalat_helye, @hasznalat_eve, @szlengtipus, @nyelv, @publikacio_tipusa, @adatkozles_formaja, @publikacio_temeja, @publikacio_celja)";
-                cmd.Prepare();
-
                 cmd.Parameters.AddWithValue("@teljes_szoveg", rowview.Row["teljes_szoveg"].ToString());
                 cmd.Parameters.AddWithValue("@megjelenes_eve", rowview.Row["megjelenes_eve"].ToString());
                 cmd.Parameters.AddWithValue("@hasznalat_helye", rowview.Row["hasznalat_helye"].ToString());
@@ -565,7 +563,6 @@ namespace UniDeb
                 cmd.Connection = connection;
 
                 cmd.CommandText = "UPDATE `adat` SET `teljes_szoveg`=@teljes_szoveg,`megjelenes_eve`=@megjelenes_eve,`hasznalat_helye`=@hasznalat_helye,`hasznalat_eve`=@hasznalat_eve,`szlengtipus`=@szlengtipus,`nyelv`=@nyelv,`publikacio_tipusa`= @publikacio_tipusa,`adatkozles_formaja`=@adatkozles_formaja,`publikacio_temeja`=@publikacio_temeja,`publikacio_celja`= @publikacio_celja WHERE `index` =" + rowview.Row["index"].ToString();
-                cmd.Prepare();
 
                 cmd.Parameters.AddWithValue("@teljes_szoveg", rowview.Row["teljes_szoveg"].ToString());
                 cmd.Parameters.AddWithValue("@megjelenes_eve", rowview.Row["megjelenes_eve"].ToString());
@@ -930,7 +927,6 @@ namespace UniDeb
                 connection.Open();
                 cmd.Connection = connection;
                 cmd.CommandText = "INSERT INTO cikkkonyvkonyvreszl_mujelleg VALUES (NULL, @ertek)";
-                cmd.Prepare();
                 cmd.Parameters.AddWithValue("@ertek", Txtbx_cmbbxbox3.Text);
                 //MessageBox.Show(cmd.CommandText);
                 cmd.ExecuteNonQuery();
@@ -955,7 +951,6 @@ namespace UniDeb
                 connection.Open();
                 cmd.Connection = connection;
                 cmd.CommandText = "INSERT INTO onmu_mujelleg VALUES (NULL, @ertek)";
-                cmd.Prepare();
                 cmd.Parameters.AddWithValue("@ertek", Txtbx_cmbbxbov1.Text);
                 //MessageBox.Show(cmd.CommandText);
                 cmd.ExecuteNonQuery();
@@ -980,7 +975,6 @@ namespace UniDeb
                 connection.Open();
                 cmd.Connection = connection;
                 cmd.CommandText = "INSERT INTO szerkkonyv_mujelleg VALUES (NULL, @ertek)";
-                cmd.Prepare();
                 cmd.Parameters.AddWithValue("@ertek", Txtbx_cmbbxbov2.Text);
                 //MessageBox.Show(cmd.CommandText);
                 cmd.ExecuteNonQuery();

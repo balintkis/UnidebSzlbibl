@@ -390,7 +390,6 @@ namespace UniDeb
                 connection.Open();
                 cmd.Connection = connection;
                 cmd.CommandText = "INSERT INTO adat VALUES(NULL, @teljes_szoveg, @megjelenes_eve, @hasznalat_helye, @hasznalat_eve, @szlengtipus, @nyelv, @publikacio_tipusa, @adatkozles_formaja, @publikacio_temeja, @publikacio_celja)";
-                cmd.Prepare();
                 cmd.Parameters.AddWithValue("@teljes_szoveg", this.mezok[0]);
                 cmd.Parameters.AddWithValue("@megjelenes_eve", this.mezok[1]);
                 cmd.Parameters.AddWithValue("@hasznalat_helye", this.mezok[2]);
@@ -660,7 +659,7 @@ namespace UniDeb
             string tabla = "";
             if (cmbbxUpdateCmbbxs.SelectedItem != null)
             {
-                switch (cmbbxUpdateCmbbxs.SelectedItem.ToString())
+                switch (cmbbxUpdateCmbbxs.SelectedValue as string)
             {
                 case "3. Használat helye":
                     tabla = "hasznhelye";
@@ -695,7 +694,6 @@ namespace UniDeb
                     connection.Open();
                     cmd.Connection = connection;
                     cmd.CommandText = "INSERT INTO " + tabla + " VALUES (NULL, @ertek)";
-                    cmd.Prepare();
                     cmd.Parameters.AddWithValue("@ertek", TxtbxAddOption.Text);
                     //MessageBox.Show(cmd.CommandText);
                     cmd.ExecuteNonQuery();
